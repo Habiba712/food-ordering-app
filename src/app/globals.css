@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+ 
+section.hero{
+
+        @apply grid;
+        grid-template-columns: .4fr .6fr;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"]
+{
+    @apply bg-white rounded-full px-4 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-200 focus:border-transparent mt-0 mb-3;
+    @apply w-full py-2 px-4 border-2 border-gray-200 ;
+}
+select
+{
+    @apply bg-white rounded-full px-4 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-200 focus:border-transparent mt-0 mb-3;
+    @apply w-full py-2 px-4 border-2 border-gray-200 ;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+button[type="submit"]{
+    @apply bg-red-600 text-center text-white px-4 py-2 rounded-full mt-3;
+}
+.submit{    
+    @apply bg-red-600 text-center text-white px-4 py-2 rounded-full mt-3;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+
+input[type="text"]:disabled,
+input[type="email"]:disabled,
+input[type="password"]:disabled,
+input[type="tel"]:disabled
+{
+    @apply bg-gray-100 rounded-full px-4 text-sm text-gray-400;
+    @apply cursor-not-allowed
+}
+
+
+label{
+    @apply text-gray-500 text-sm ml-3;
+}
+button[type="submit"]:disabled{
+    @apply bg-red-300 text-center text-white px-4 py-2 rounded-full mt-3;
+    @apply cursor-not-allowed
+}
+
+button[type="button"]{
+    @apply text-center py-1 rounded-full cursor-pointer 
+}
+.button{
+    @apply text-center py-1 rounded-full cursor-pointer text-gray-700 px-4 py-2 border;
+}
+.submit:disabled{    
+    @apply bg-red-300 text-center text-white px-4 py-2 rounded-full mt-3;
+    @apply cursor-not-allowed
+}
+ 
+
+/* profile page tabs */
+
+div.tabs > *{
+     @apply cursor-pointer bg-gray-400 text-white px-4 py-2 rounded-full mb-4; 
+
+}
+
+div.tabs > *.active{
+        @apply cursor-pointer bg-red-600 text-white px-4 py-2 rounded-full mb-4; 
+
+}
+
+button.categories:hover {  
+        @apply bg-gray-100;
+    }
+nav > a {
+    @apply font-thin ;
+}
+nav > a:hover {
+ 
+    @apply text-red-600 font-semibold  transition duration-500 ease-in-out;
 }

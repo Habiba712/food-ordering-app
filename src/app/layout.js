@@ -1,15 +1,15 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
+import Header from "./component/layout/Header";
+import { AppProvider } from "./component/AppContext";
+import ProviderWrapper from "../app/providerWrapper";
+import { Toaster } from "react-hot-toast";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
   subsets: ["latin"],
+  weight: ["400", "500", "900"]
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -18,11 +18,21 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={roboto.className}
       >
-        {children}
+        <AppProvider> 
+          <main className="max-w-4xl mx-auto p-4">
+        <Toaster/>
+          <Header />
+          {children}
+          <footer className="text-center mt-10 py-8 border-t border-gray-200 border-solid">
+            <p className="text-gray-600 text-md text-center">&copy; 2022 Food Ordering App. All rights reserved.</p>
+          </footer>
+
+        </main>
+        </AppProvider>
       </body>
     </html>
   );
