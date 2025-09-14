@@ -1,14 +1,21 @@
 'use client';
 
 import { SessionProvider } from "next-auth/react";
-import { createContext, use, useState } from "react";
-import { useEffect } from "react";
+import { createContext, } from "react";
+import { useEffect, useState} from "react";
 
 export const CartContext = createContext({});
 export function AppProvider({ children }) {
   
 
-const [cartItems, setCartItems] = useState(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []);
+  const [cartItems, setCartItems] = useState([]); // safe default
+
+  useEffect(() => {
+    const storedItems = localStorage.getItem("cartItems");
+    if (storedItems) {
+      setCartItems(JSON.parse(storedItems));
+    }
+  }, []);
 
 function  addToCart (product, size, extras) {
 

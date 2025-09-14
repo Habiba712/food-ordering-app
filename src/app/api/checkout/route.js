@@ -12,8 +12,8 @@ const connectToDatabase = async () => {
 }
 export async function POST(req) {
     const session = await connectToDatabase();
-    const { data, adress } = await req.json()
-    console.log('adress', adress);
+    const { data, adress, amountToPay } = await req.json()
+    console.log('data', data);
     
    
 // console.log('data', data)
@@ -66,7 +66,8 @@ export async function POST(req) {
         country: adress.country,
         city: adress.city,
         postCode: adress.postCode,
-        paid: false
+        paid: false,
+        amountToPay: amountToPay
     })
     // console.log('order', order)
     await order.save();

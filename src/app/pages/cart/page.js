@@ -27,12 +27,15 @@ export default function CartPage() {
 
     console.log('userEmail', userEmail);
 
+    
+
     const amountToPayPerItem = (cartItems) => {
         let amountToPay = 0;
         for (const element of cartItems) {
             // console.log('element', element);
             amountToPay += totalPricePerItem(element) * element.quantity; //times the quantity of the element;
         }
+
         return amountToPay;
     };
 
@@ -121,6 +124,7 @@ export default function CartPage() {
         e.preventDefault();
         console.log('cartItems', cartItems);
         const data = cartItems;
+            
         const adress = {
             phone,
             street,
@@ -129,6 +133,7 @@ export default function CartPage() {
             postCode,
             userEmail,
         }
+        const amountToPay = amountToPayPerItem(cartItems) + deliveryFee;
 
         const res = new Promise(async (resolve, reject) => {
             await fetch('http://localhost:3000/api/checkout', {
@@ -137,7 +142,7 @@ export default function CartPage() {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    data, adress
+                    data, adress, amountToPay
                 })
             }).then(async res => {
                 if (res.ok) {
@@ -309,6 +314,7 @@ export default function CartPage() {
                             </div>
 
                         </div>
+                        
                         <div className="w-100 flex flex-col bg-gray-100 p-4 h-fit ml-4 rounded-lg">
                             <div>
                                 <form className="flex gap-2 max-w-2xl mx-auto mt-4"
