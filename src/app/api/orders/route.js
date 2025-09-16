@@ -25,7 +25,7 @@ export async function GET(req) {
 
   //get all orders only for admin
   if (user.admin === true) {
-    const getOrders = await Order.find({ 'userEmail': email })
+    const getOrders = await Order.find()
     console.log('data order', getOrders)
     return Response.json(getOrders)
   }

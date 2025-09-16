@@ -91,18 +91,19 @@ export default function OrdersPage() {
     console.log('currentOrder in page', currentOrder?.amountToPay)
 
     return (
-        <section className="mt-10">
-            <div className="text-center">
+        <section className="mt-10 ">
+            <div className="text-center max-w-3xl mx-auto">
                 <SectionHeaders mainHeader={'Your Order'} />
 
-                <div className="mt-4 grid grid-cols-2 gap-4 mt-8" style={{ width: '100%' }}>
-                    <div>
+                <div className="grid grid-cols-2 gap-4 mt-8" style={{ width: '100%' }}>
+                    
 
                         <OrderItemBox
+                       
                             currentOrder={currentOrder?.[0]?.cartItems || []}
 
                         />
-                    </div>
+                    
                     <AdressBox
                         data={addressBoxData}
                         functions={adressBoxFunctions}

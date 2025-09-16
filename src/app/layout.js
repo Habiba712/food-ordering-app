@@ -4,12 +4,16 @@ import Header from "./component/layout/Header";
 import { AppProvider } from "./component/AppContext";
 import ProviderWrapper from "../app/providerWrapper";
 import { Toaster } from "react-hot-toast";
+import { Open_Sans } from "next/font/google";
 
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "500", "900"]
 });
-
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"], // choose the weights you need
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -20,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={roboto.className}
+        className={openSans.className}
       >
         <AppProvider> 
           <main className=" mx-auto p-4">

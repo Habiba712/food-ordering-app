@@ -26,8 +26,8 @@ export default function Header() {
     }, [cartItems]);
     console.log('cartItemsLocal', cartItemsLocal);
      return (
-
-        <header className="flex items-center justify-between">
+ 
+        <header className="flex items-center justify-between max-w-4xl mx-auto">
             {/* //* The logo in seperated form the nav */}
             <Link className="text-red-700 font-semibold text-2xl mr-2" href="/">
                 Annyeong Kitchen
@@ -54,7 +54,7 @@ export default function Header() {
                             <button
                                 onClick={() => {
                                     signOut(),
-                                        redirect('/pages/login')
+                                        redirect('http://localhost:3000/pages/login')
                                 }
                                 }
                                 className='bg-red-600 rounded-full text-white px-8 py-2 cursor-pointer'>

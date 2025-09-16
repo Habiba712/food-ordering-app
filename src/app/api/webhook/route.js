@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import Stripe from 'stripe';
 
 
-const stripe = new Stripe('process.env.STRIPE_SK');
+const stripe = new Stripe(process.env.STRIPE_SK);
  
 
 export async function POST(req) {
@@ -13,12 +13,10 @@ export async function POST(req) {
   const sig = req.headers.get('stripe-signature')
   let event;
   const endpointSecret = process.env.STRIPE_SIGNITURE_KEY;
- 
+    console.log('endpointSecret', endpointSecret);
+
 
   if (endpointSecret) {
-    // console.log('endpointSecret', endpointSecret);
-    // let getBuffer = await req.body;
-
     try {
 
       event = stripe.webhooks.constructEvent(buf, sig, endpointSecret);

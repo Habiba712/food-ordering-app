@@ -188,7 +188,7 @@ export default function ProfilePage() {
     return (
         <section className="mt-10">
             
-            { admin ? <UserTabs /> : ''}
+             <UserTabs /> 
             <UserEditPage 
             userInfo={userInfo} 
             userInfoFunctions={userInfoFunctions} 

@@ -43,7 +43,7 @@ console.log('amountToPay in OrderItemBox', amountToPay)
 
     return(
 
-          <div className="mt-4 grid grid-cols-2 gap-4 mt-8" style={{ width: '100%' }}>
+          <div className="grid grid-cols-2 gap-4" style={{ width: '100%' }}>
                                 <div className="flex-col w-50 ">
                                     {(currentOrder && currentOrder.length > 0) &&
         
