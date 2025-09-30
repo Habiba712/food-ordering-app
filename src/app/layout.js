@@ -25,10 +25,14 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <body
         className={openSans.className}
+        style={{
+          overflowX: 'hidden'
+        }}
+       
       >
         <AppProvider> 
           <main className=" mx-auto p-4">
-        <Toaster/>
+        <Toaster className="border border-red-600" />
           <Header />
           {children}
           <footer className="text-center mt-10 py-8 border-t border-gray-200 border-solid">
