@@ -42,16 +42,16 @@ export default function Header() {
  
                     </div>
                     
-                    <div className="sm: text-red-700 md:hidden cursor-pointer"
+                    <div className="sm:text-red-700 md:hidden cursor-pointer"
                         onClick={() => setShowMenu(!showMenu)}
                     >
                         <div className="flex flex-row items-center gap-3 text-black">
                              <Link
                                 className="flex relative" href={'/pages/cart'}>
-                                <CartIcon className="text-balck-800" color="black" />
+                                <CartIcon className=""  />
                                 {(cartItemsLocal && cartItemsLocal?.length > 0) &&
                                     <span
-                                        className="absolute flex justify-center items-center -top-2 -right-3 text-white  rounded-full font-bold px-1 py-1 text-xs leading-3 "
+                                        className="absolute flex justify-center items-center  -top-2 -right-2 text-white  rounded-full font-bold px-1 py-1 text-xs leading-3 bg-red-600 "
                                     >
                                         {cartItemsLocal?.length}
                                     </span>

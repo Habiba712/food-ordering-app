@@ -49,7 +49,7 @@ export default function imageUpload({ link, setLink }) {
 
                 <div className="flex justify-center items-center">
                     <Image
-                        className="rounded-lg bg-gray-100 text-center"
+                        className="rounded-full bg-gray-100 text-center"
                         src={link
                             ? link : imagePlaceholder
                         } width={100} height={100} alt="userImage" />

@@ -17,9 +17,9 @@ export default function Hero() {
                     Welcome to our restaurant !!
                 </h1>
                 {/* <form className="flex flex-col gap-4">
-    <input type="text" placeholder="이름을 입력해주세요" />
-    <input type="text" placeholder="주소를 입력해주세요" />
-    <input type="text" placeholder="전화번호를 입력해주세요" /> */}
+                <input type="text" placeholder="이름을 입력해주세요" />
+                <input type="text" placeholder="주소를 입력해주세요" />
+                <input type="text" placeholder="전화번호를 입력해주세요" /> */}
                 <p className="my-6 text-gray-500">
                     Craving the rich, bold flavors of Korea? You’re in the right                     place! From
                     sizzling Korean BBQ to comforting bibimbap, from crunchy kimchi to
@@ -44,7 +44,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="relative">
+            <div className="relative -top-30 -z-10 right-20 w-100 md:relative ">
 
                 {/* //* the layout fill and objectFit contain allowed The
                 //* image to grow when another elemetn on the same section grew 

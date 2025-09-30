@@ -95,10 +95,11 @@ export default function MenuPage() {
                         <div key={index || cat._id} className="mt-10">
                               <SectionHeaders key={index || cat._id}
                             mainHeader={cat.name}/>
-                            <div className="grid grid-cols-3 gap-4 mt-4">
+                            <div className="md:grid grid-cols-3 gap-4 mt-4">
                                 {items.filter((item)=> item.category === cat._id).map((item, i)=>(
-                                     <div className="flex flex-col 
+                                     <div className="mx-auto w-80 md:flex flex-col 
                                                 justify-content  duration-300 ease-in
+                                                mb-3
                                                 "
                                                 key={i || item._id}
                                                 style={{

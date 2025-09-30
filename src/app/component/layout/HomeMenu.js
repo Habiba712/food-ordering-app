@@ -21,7 +21,7 @@ export default function HomeMenu() {
         await fetch('/api/menuItems').then(res => {
             if (res.ok) {
                 return res.json().then(data => {
-                    setAllItems(data.slice(0,3))
+                    setAllItems(data.slice(0, 3))
                 })
             }
 
@@ -49,7 +49,7 @@ export default function HomeMenu() {
                 <SectionHeaders subHeader={'CHECK HERE'} mainHeader={'Our Best Sellers'} />
 
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="md:grid grid-cols-3 gap-4">
                 {
                     allItems?.map((item, index) => {
                         return (
@@ -63,13 +63,13 @@ export default function HomeMenu() {
 
             </div>
             <div className="flex justify-self-center justify-between items-center mt-4 py-2 px-6 text-red-600 bg-white border border-red-600 rounded-full w-fit">
-  <Link href="/pages/menu"className="font-semibold cursor-pointer text-red-600 hover:text-red-700 transition duration-300 ease-in-out z-100">
-   
-      See More
-    
-  </Link>
-  <ArrowRight className="ml-3 w-5 h-6" />
-</div>
+                <Link href="/pages/menu" className="font-semibold cursor-pointer text-red-600 hover:text-red-700 transition duration-300 ease-in-out z-100">
+
+                    See More
+
+                </Link>
+                <ArrowRight className="ml-3 w-5 h-6" />
+            </div>
 
         </section>
     )

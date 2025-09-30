@@ -44,8 +44,8 @@ export default function AddToCartModal({ item, closeModal, handleAddToCart }) {
             //     closeModal(false)
             // }}
             >
-                <div className="flex flex-col 
-                                justify-content  duration-300 ease-in"
+                <div className="w-90 md:w-100 flex flex-col overflow-y-scroll max-h-[80vh] p-4 
+             scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100"
                     style={{
                         "background": "white",
 
@@ -54,7 +54,7 @@ export default function AddToCartModal({ item, closeModal, handleAddToCart }) {
                         "borderRadius": "20px",
                     }}
                 >
-                    <div className="w-[200px] h-[200px] relative mt-4 mx-auto">
+                    <div className="w-[200px] h-[200px] relative mt-4 mx-auto flex-shrink-0">
                         <Image
                             src={item.itemImage}
                             alt="userImage"

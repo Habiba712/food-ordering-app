@@ -82,8 +82,8 @@ console.log('selectedCategory', selectedCategory)
                         }
                     )}>
 
-            <div className="flex gap-2 max-w-2xl mx-auto">
-                <div className="flex flex-col  gap-2 mt-5">
+            <div className="md:flex gap-2 max-w-2xl mx-auto">
+                <div className="flex flex-col gap-2 mt-5">
 
                     <ImageUpload link={itemImage} setLink={setItemImage} />
                 </div>

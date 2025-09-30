@@ -6,7 +6,7 @@ export function UserTabs() {
 
     const [isAdmin, setIsAdmin] = useState(false)
     const [userEmail, setUserEmail] = useState('')
-      const getUserData = async () => {
+    const getUserData = async () => {
         const userData = await fetch('http://localhost:3000/api/profile', {
             method: 'GET',
             headers: {
@@ -35,55 +35,55 @@ export function UserTabs() {
     return (
 
         <div>
-            <div className="flex gap-4 justify-center items-center tabs max-w-mdmx-auto mt-8">
-                
+            <div className="text-sm flex md:flex gap-4 justify-center items-center tabs max-w-md mx-auto mt-8">
+
                 {isAdmin ? (
                     <>
-                    <Link
-                    href={'/pages/profile'}
+                        <Link
+                            href={'/pages/profile'}
 
-                    className={`${pathname === '/pages/profile' ? 'active' : ''}`}>Profile
-                </Link>
+                            className={`${pathname === '/pages/profile' ? 'active' : ''}`}>Profile
+                        </Link>
 
- <Link href={'/pages/categories'}
+                        <Link href={'/pages/categories'}
 
-                    className={`${pathname === '/pages/categories' ? 'active' : ''}`}
+                            className={`${pathname === '/pages/categories' ? 'active' : ''}`}
 
-                >Categories
-                </Link>
+                        >Categories
+                        </Link>
 
 
-                <Link href={'/pages/menuElements'} className={`${pathname.includes('/menuElements') ? 'active' : ''}`}>Menu Items
-                </Link>
+                        <Link href={'/pages/menuElements'} className={`${pathname.includes('/menuElements') ? 'active' : ''}`}>Menu Items
+                        </Link>
 
-                <Link href={'/pages/users'} className={`${pathname.includes('users') ? 'active' : ''}`}>Users
-                </Link>
+                        <Link href={'/pages/users'} className={`${pathname.includes('users') ? 'active' : ''}`}>Users
+                        </Link>
 
-                  <Link href={'/pages/orders'} className={`${pathname === '/pages/orders' ? 'active' : ''}`}>Orders
-                </Link>
+                        <Link href={'/pages/orders'} className={`${pathname === '/pages/orders' ? 'active' : ''}`}>Orders
+                        </Link>
                     </>
 
 
 
                 )
-            : 
-            <> <Link
-                    href={'/pages/profile'}
+                    :
+                    <> <Link
+                        href={'/pages/profile'}
 
-                    className={`${pathname === '/pages/profile' ? 'active' : ''}`}>Profile
-                </Link>
-                
+                        className={`${pathname === '/pages/profile' ? 'active' : ''}`}>Profile
+                    </Link>
 
-                  <Link href={'/pages/orders'} className={`${pathname === '/pages/orders' ? 'active' : ''}`}>Orders
-                </Link>
 
-            </>
-            
-            }
-                
-               
+                        <Link href={'/pages/orders'} className={`${pathname === '/pages/orders' ? 'active' : ''}`}>Orders
+                        </Link>
 
-              
+                    </>
+
+                }
+
+
+
+
             </div>
         </div>
 

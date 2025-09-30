@@ -41,7 +41,7 @@ export default function MenuItemsPage() {
         <ArrowRight />
       </div>
 
-      <div className="grid grid-cols-3 gap-2 mt-8 max-w-2xl mx-auto">
+      <div className="w-70 md:grid grid-cols-3 gap-3 mt-8 max-w-2xl mx-auto">
         {allItems?.map((item, index) => (
           <Link key={index || item._id}
             href={
@@ -49,7 +49,7 @@ export default function MenuItemsPage() {
             }
           >
             <div
-              className="flex text-center justify-center  flex-col  gap-3 border-gray-300 hover:border-3 hover:border-green-300 border-2 rounded-lg py-2 px-3 cursor-pointer">
+              className="flex text-center justify-center mb-4  flex-col  gap-3 border-gray-100 hover:border-3 hover:border-red-800 border rounded-lg py-2 px-3 cursor-pointer">
               <div className="w-[200px] h-[200px] relative right-1 mx-auto">
                 <Image
                   src={item.itemImage}

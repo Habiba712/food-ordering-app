@@ -8,7 +8,7 @@ export default function UserEditPage({userInfo, userInfoFunctions, onSave}) {
 
     console.log('user Info Admin', userInfo.admin);
     return (
-        <form className="flex gap-2 max-w-2xl mx-auto mt-4" onSubmit={onSave}>
+        <form className=" md:flex gap-2 max-w-2xl mx-auto mt-4" onSubmit={onSave}>
 
                 <div className="flex flex-col  gap-2">
 
