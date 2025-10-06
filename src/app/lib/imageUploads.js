@@ -4,7 +4,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import imagePlaceholder from "../../../../public/images/imagePlaceholder.jpg";
 
-export default function imageUpload({ link, setLink }) {
+export default function ImageUpload({ link: string, setLink }) {
 
 
     async function handleImageUplaod(e) {

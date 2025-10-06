@@ -1,9 +1,9 @@
 
  'use client'
  import { useEffect, useState } from "react";
-import ImageUpload from "../../../lib/imageUpload/page";
+import ImageUpload from "../../../lib/imageUploads";
 import toast from "react-hot-toast";
-import { UserTabs } from "../../../component/userTabs/page";
+import UserTabs from "../../../component/userTabs/page";
 import Link from "next/link";
 import ArrowRight from "../../../component/icons/arrow_right";
 import MenuFormPage from "../../../lib/menuForm/page";

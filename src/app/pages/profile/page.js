@@ -6,8 +6,8 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { UserTabs } from "../../component/userTabs/page";
-import ImageUpload from "../../lib/imageUpload/page";
+import { UserTabs} from "../../component/userTabs/page";
+import ImageUpload from "../../lib/imageUploads";
 import UserEditPage from "../../lib/userEdit/page";
  
 

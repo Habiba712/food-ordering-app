@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-export function UserTabs() {
+export default function UserTabs() {
 
     const [isAdmin, setIsAdmin] = useState(false)
     const [userEmail, setUserEmail] = useState('')

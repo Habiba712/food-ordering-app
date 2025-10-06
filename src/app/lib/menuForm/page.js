@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react"
-import ImageUpload from "../imageUpload/page"
+import ImageUpload from "../imageUploads"
 import { set } from "mongoose"
 import PlusSingIcon from "../../../app/component/icons/plus_sing"
 import MenuItemProps from "../../../app/component/menuItems/MenuItemProps"
