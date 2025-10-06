@@ -34,8 +34,8 @@ export function UserTabs() {
     const pathname = usePathname();
     return (
 
-        <div>
-            <div className="text-sm flex md:flex gap-4 justify-center items-center tabs max-w-md mx-auto mt-8">
+        <div className="w-full ">
+            <div className="w-full text-2xl grid grid-cols-5  sm:flex sm:flex-row text-sm gap-3 md:flex tabs  mt-8">
 
                 {isAdmin ? (
                     <>

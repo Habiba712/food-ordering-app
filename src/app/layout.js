@@ -31,8 +31,8 @@ export default function RootLayout({ children }) {
        
       >
         <AppProvider> 
-          <main className=" mx-auto p-4">
-        <Toaster className="border border-red-600" />
+          <main className="w-fill mx-auto p-4">
+        <Toaster />
           <Header />
           {children}
           <footer className="text-center mt-10 py-8 border-t border-gray-200 border-solid">

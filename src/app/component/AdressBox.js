@@ -4,9 +4,9 @@ export default function AdressBox({data, functions})  {
     console.log('data', data)
 
     return( 
-         <div className="w-100 flex flex-col bg-gray-100 p-4 h-fit ml-4 rounded-lg">
-                        <div>
-                            <form className="flex gap-2 max-w-2xl mx-auto mt-4"
+         <div className="flex justify-center items-center px-4">
+                        <div >
+                            <form className="flex gap-2 max-w-2xl mx-auto mt-4 w-100 flex flex-col bg-gray-100 p-4 h-fit  rounded-lg"
                                 
                             >
 

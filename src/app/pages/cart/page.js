@@ -181,8 +181,8 @@ export default function CartPage() {
     return (
 
 
-        <section className="w-100 md:mt-10 max-w-4xl mx-auto">
-            <div className="text-center w-fit mx-auto rounded-full px-4">
+        <section className="md:mt-10 max-w-4xl mx-auto">
+            <div className="text-center">
                 <SectionHeaders mainHeader={'My Cart'} />
 
             </div>
@@ -193,14 +193,14 @@ export default function CartPage() {
                             Your cart is empty 😢</h4>
                     </div>
                     :
-                    <div className="w-fit flex flex-col items-start md:grid grid-cols-2 gap-4 mt-8 " >
-                        <div className="flex flex-col items-center justify-center rounded-lg  ">
+                    <div className=" flex flex-col items-center  w-100 md:grid grid-cols-2 gap-4 mt-8 md:flex md:items-start" style={{ width: '100%' }}>
+                        <div className="flex-col md:w-100 ">
                             {(cartItems && cartItems.length > 0) &&
 
                                 cartItems.map((item, index) => (
 
                                     <div key={index || item.id}
-                                        className="w-100 flex grid grid-2  p-4 
+                                        className="flex grid grid-2  p-4  w-100 
                                 border-b border-gray-300 
                                 relative min-h-[160px] ">
 
@@ -215,7 +215,7 @@ export default function CartPage() {
                                         </div>
                                         {/* mobile version */}
                                         <div className="
-                                        grid grid-cols-2 ml-30 gap-20  md:hidden">
+                                        grid grid-cols-2 ml-30 gap-25 md:hidden">
 
                                             <div className="flex flex-col  grow-1 w-50">
                                                 <h3 className="font-semibold mb-2">{item.itemName}</h3>
@@ -253,12 +253,12 @@ export default function CartPage() {
                                                 </div>
                                             </div>
 
-                                            <div className="flex flex-col  gap-10 font-semibold md:hidden">
+                                            <div className="flex flex-col items-center justify-between font-semibold md:hidden">
 
                                                 {/* quantity and trash icon */}
                                                 <div className="flex gap-2">
 
-                                                    <div className="border border-gray-400 rounded-lg  flex justify-around px-4 items-center ">
+                                                    <div className="border border-gray-400 rounded-lg  flex justify-around items-center px-3 ">
                                                         <button
                                                             className="cursor-pointer"
                                                             onClick={(e) => handleQuantity(e, -1, item)}>
@@ -286,14 +286,18 @@ export default function CartPage() {
                                                     </div>
 
 
+
                                                 </div>
-                                                <div className="text-green-700 ml-6 mt-4 w-fit text-xl">
+
+                                                <div className="text-green-700 flex justify-center  w-fit text-2xl">
 
                                                     <p>
                                                         ${totalPricePerItem(item)}
 
                                                     </p>
+
                                                 </div>
+
 
 
 
@@ -388,31 +392,25 @@ export default function CartPage() {
                                     </div>
                                 ))
                             }
-                            <div className="w-100 ">
-
-                                <div className="flex justify-between mt-4 rounded-lg ml-0 p-4 bg-gray-100 text-gray-500 "> Subtotal:
-                                    <p className="font-semibold mr-3 justify-end">
-                                        $ {amountToPayPerItem(cartItems)}
-                                    </p>
-                                </div>
-                                <div className="flex justify-between rounded-lg mt-4 ml-0 p-4 bg-gray-100 text-gray-500 "> Delivery Fee:
-                                    <p className="font-semibold mr-3 justify-end">
-                                        $ 5
-                                    </p>
-                                </div>
-                                <div className="flex justify-between rounded-lg mt-4 ml-0 p-4 bg-gray-100 text-gray-500 "> Total:
-                                    <p className="font-semibold mr-3 justify-end">
-                                        $ {amountToPayPerItem(cartItems) + deliveryFee}
-                                    </p>
-                                </div>
+                            <div className="bg-gray-100 mt-4 p-4 text-gray-500 flex w-100 justify-between"> Subtotal:
+                                <p className="font-semibold mr-3 justify-end">
+                                    $ {amountToPayPerItem(cartItems)}
+                                </p>
                             </div>
-
-
+                            <div className="bg-gray-100 mt-4 p-4 text-gray-500 flex w-100 justify-between"> Delivery Fee:
+                                <p className="font-semibold mr-3 justify-end">
+                                    $ 5
+                                </p>
+                            </div>
+                            <div className="bg-gray-100 mt-4 p-4 text-gray-500 flex w-100 justify-between"> Total:
+                                <p className="font-semibold mr-3 justify-end">
+                                    $ {amountToPayPerItem(cartItems) + deliveryFee}
+                                </p>
+                            </div>
 
                         </div>
 
-
-                        <div className="w-100 md:w-100 flex flex-col bg-gray-100 p-4 h-fit rounded-lg">
+                        <div className="mr-4 w-100 md:w-100 flex flex-col bg-gray-100 p-4 h-fit ml-4 rounded-lg">
                             <div>
                                 <form className="flex gap-2 max-w-2xl mx-auto mt-4"
                                     onSubmit={(e) => movetoCheckout(e)}

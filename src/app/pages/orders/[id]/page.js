@@ -41,6 +41,8 @@ export default function OrdersPage() {
     const url = useParams();
     const id = url.id;
 
+    console.log('id', id)
+
     const getUserData = async () => {
         const userData = await fetch('http://localhost:3000/api/profile', {
             method: 'GET',
@@ -75,8 +77,8 @@ export default function OrdersPage() {
         }).then((res) => {
             return res.json().then((data) => {
                 setTotalPrice(data.amountToPay)
-                // console.log('data order', typeof(data))
-                setCurrentOrder(data)
+                console.log('data order', (data.filter(item => item._id === id)))
+                setCurrentOrder(data.filter(item => item._id === id))
             })
 
         }).catch((err) => {
@@ -91,26 +93,20 @@ export default function OrdersPage() {
     console.log('currentOrder in page', currentOrder?.amountToPay)
 
     return (
-        <section className="mt-10 ">
+        <section className="mt-10 overflow-x">
             <div className="text-center max-w-3xl mx-auto">
-                <SectionHeaders mainHeader={'Your Order'} />
+                <SectionHeaders  mainHeader={'Your Order'} />
 
-                <div className="grid grid-cols-2 gap-4 mt-8" style={{ width: '100%' }}>
-                    
-
-                        <OrderItemBox
-                       
-                            currentOrder={currentOrder?.[0]?.cartItems || []}
-
-                        />
-                    
+                <div className="flex flex-col items-center gap-4 sm:w-full 
+                md:grid md:grid-cols-2 md:items-start md:w-auto mt-8 md:gap-25">
+ 
+                    <OrderItemBox
+                        currentOrder={currentOrder?.[0]?.cartItems || []}
+                    />
                     <AdressBox
                         data={addressBoxData}
                         functions={adressBoxFunctions}
                     />
-
-
-
                 </div>
             </div>
         </section>
