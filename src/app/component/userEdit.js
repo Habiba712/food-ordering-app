@@ -48,7 +48,8 @@ export default function UserEditPage({userInfo, userInfoFunctions, onSave}) {
                         userInfo.initialAdmin && 
                         (
                             <div className="flex items-center ml-3">
-                    <input type = "checkbox" id="admin" checked={userInfo.admin} 
+                           
+                    <input type = "checkbox" id="admin" checked={userInfo.initialAdmin} 
                      className="mr-2"
                      onChange = {(e) => {
                         userInfoFunctions.setAdmin(e.target.checked)
