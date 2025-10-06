@@ -13,7 +13,7 @@ export default function OrdersPage() {
 
   const [orders, setOrders] = useState([])
   const getOrders = async () => {
-    await fetch('http://localhost:3000/api/orders').then((res) => {
+    await fetch('/api/orders').then((res) => {
       if (res.ok) {
         return res.json().then(data => {
           setOrders(data.reverse())
