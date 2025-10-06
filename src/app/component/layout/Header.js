@@ -94,10 +94,10 @@ export default function Header() {
                         <div 
                          ref={menuRef}
                         className={`
-                            fixed top-16 right-[5%] z-100 border border-gray-200 bg-white rounded-lg w-100 shadow-sm md:hidden
+                            mx-6
+                            fixed top-16 left-1/2 -translate-x-1/2 z-100 border border-gray-200 bg-white rounded-lg w-80 shadow-sm md:hidden
                             flex flex-col  gap-4 rounded-lg p-2
-                    transition-all duration-900 ease-in-out
-    showMenu ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+                   
   }`
                         } >
                             <Link className="hover:text-red-800"  onClick={() => setShowMenu(false)}href={'/'}>Home</Link>
@@ -110,11 +110,9 @@ export default function Header() {
                             {
                                 status === 'authenticated' ?
                                     <div className='flex justify-between  w-full gap-4 '>
-                                        <Link onClick={() => setShowMenu(false)} href={'/pages/profile'}>{userName}</Link><button className="bg-white 
-                            text-red-600 py-2" >
-
-                            </button>
-
+                                        <Link onClick={() => setShowMenu(false)} href={'/pages/profile'}>{userName}</Link>
+                                        
+                                     
                                         <button
                                             onClick={() => {
                                                 signOut(),
@@ -131,7 +129,22 @@ export default function Header() {
                                     </div>
 
                                     :
-                                    ''
+                                   
+                        
+                        <div className='flex justify-between  w-full gap-4 '>
+                            <button>
+                                <Link className="bg-white rounded-full flex shrink items-center justify-center border-1 border-red-600 text-red-600 px-8 py-2" href={'/pages/login'}>Login</Link>
+                            </button>
+                              <button>
+                                 <Link
+
+                                className="bg-red-600 rounded-full text-white px-8 py-2" href={'/pages/register'}>Register</Link>
+
+                              </button>
+                           
+                        </div>
+                          
+                        
                             }
 
                         </div>

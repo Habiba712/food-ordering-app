@@ -24,7 +24,7 @@ export default function LoginPage () {
         <section>
             <h1 className="text-center text-red-700 text-2xl font-semibold mt-3">Login</h1>
 
-            <form className="flex flex-col w-sm mx-auto p-3 justify-center gap-4" onSubmit={handleFormSubmit}>
+            <form className="w-x flex flex-col justify-center sm:flex sm:flex-col sm:mx-auto sm:w-100 md:flex md:flex-col md:w-sm mx-auto md:p-3 md:justify-center md:gap-4 shrink-1" onSubmit={handleFormSubmit}>
             <input type="email" placeholder="email" name="email"
                     disabled={loginInProgress}
                     value={email}
