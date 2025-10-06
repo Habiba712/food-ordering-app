@@ -48,8 +48,8 @@ export default function ProfilePage() {
                 setCountry(data.country)
                 setCity(data.city)
                 setPostCode(data.postCode)
-                setAdmin(data.admin)
-                setInitialAdmin(data.admin);
+                setAdmin(data.Admin)
+                setInitialAdmin(data.Admin);
                
             })
             

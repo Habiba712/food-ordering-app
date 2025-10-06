@@ -25,6 +25,7 @@ export default function UserTabs() {
         })
 
     }
+    console.log('isAdmin', isAdmin)
 
     useEffect(() => {
         getUserData();
@@ -34,7 +35,7 @@ export default function UserTabs() {
     const pathname = usePathname();
     return (
 
-        <div className="w-full border ">
+        <div className="w-full  ">
             <div className="w-full text-2xl grid grid-cols-5  sm:flex sm:flex-row text-sm gap-3 md:flex tabs  mt-8">
 
                 {isAdmin ? (
