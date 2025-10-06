@@ -16,7 +16,7 @@ export default function UserTabs() {
             return res.json().then((data) => {
                 console.log('data from userTabs', data)
                 setUserEmail(data.email)
-                setIsAdmin(data.Admin)
+                setIsAdmin(data.admin)
 
             })
 
