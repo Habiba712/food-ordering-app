@@ -68,7 +68,7 @@ export default function OrdersPage() {
 
 
     const getOrder = async () => {
-        const userData = await fetch('http://localhost:3000/api/orders' + `?id=${id}`, {
+        const userData = await fetch('/api/orders' + `?id=${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
