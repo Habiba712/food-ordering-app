@@ -1,6 +1,6 @@
 'use client';
 import { use, useEffect, useState } from "react";
-import { UserTabs } from "../../component/userTabs/page";
+import UserTabs from "../../component/userTabs";
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import Link from "next/link";

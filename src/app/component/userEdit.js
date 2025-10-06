@@ -1,5 +1,5 @@
 'use client'
- import ImageUpload from "../../lib/imageUploads";
+ import ImageUpload from "./imageUploads";
 
 
 export default function UserEditPage({userInfo, userInfoFunctions, onSave}) {

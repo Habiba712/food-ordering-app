@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import { UserTabs } from "../../component/userTabs/page"
+import UserTabs from "../../component/userTabs"
 import { get } from "http"
 import ViewDetails from "../../component/icons/details"
 import { redirect } from "next/navigation"

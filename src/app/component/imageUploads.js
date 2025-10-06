@@ -2,9 +2,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import imagePlaceholder from "../../../../public/images/imagePlaceholder.jpg";
 
-export default function ImageUpload({ link: string, setLink }) {
+export default function ImageUpload({ link, setLink }) {
 
 
     async function handleImageUplaod(e) {
@@ -51,7 +50,7 @@ export default function ImageUpload({ link: string, setLink }) {
                     <Image
                         className="rounded-full bg-gray-100 text-center"
                         src={link
-                            ? link : imagePlaceholder
+                            ? link : "/images/imagePlaceholder.jpg"
                         } width={100} height={100} alt="userImage" />
                 </div>
                 <div className="cursor-pointer  flex justify-center items-center">

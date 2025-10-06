@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation"
 import ArrowRight from "../../component/icons/arrow_right"
-import { UserTabs } from "../../component/userTabs/page"
+import UserTabs from "../../component/userTabs"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import Image from "next/image"

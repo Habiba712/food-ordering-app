@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
-import { UserTabs } from "../../component/userTabs/page";
+import  UserTabs from "../../component/userTabs";
 import { get } from "http";
 import { redirect } from "next/navigation";
 import toast from "react-hot-toast";

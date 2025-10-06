@@ -1,12 +1,12 @@
 
  'use client'
  import { useEffect, useState } from "react";
-import ImageUpload from "../../../lib/imageUploads";
+import ImageUpload from "../../../component/imageUploads";
 import toast from "react-hot-toast";
-import UserTabs from "../../../component/userTabs/page";
+import UserTabs from "../../../component/userTabs";
 import Link from "next/link";
 import ArrowRight from "../../../component/icons/arrow_right";
-import MenuFormPage from "../../../lib/menuForm/page";
+import MenuFormPage from "../../../component/menuForm";
  
 export default function NewElementPage() {
        const [userData, setUserData] = useState('')

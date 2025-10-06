@@ -1,9 +1,9 @@
 'use client';
 import { use, useEffect, useState } from "react";
-import { UserTabs } from "../../../../component/userTabs/page";
+import  UserTabs from "../../../../component/userTabs";
 import { useSession } from "next-auth/react";
 import { redirect, useParams } from "next/navigation";
-import UserEditPage from "../../../../lib/userEdit/page";
+import UserEditPage from "../../../../component/userEdit";
 import toast from "react-hot-toast";
 
 export default function UserPage() {

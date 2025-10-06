@@ -1,16 +1,18 @@
 'use client'
 import { useEffect, useState } from "react"
-import ImageUpload from "../imageUploads"
+import ImageUpload from "./imageUploads"
 import { set } from "mongoose"
-import PlusSingIcon from "../../../app/component/icons/plus_sing"
-import MenuItemProps from "../../../app/component/menuItems/MenuItemProps"
-import DeleteModal from "../../../app/component/modals/deleteModal"
+import PlusSingIcon from "./icons/plus_sing"
+import MenuItemProps from "./menuItems/MenuItemProps"
+import DeleteModal from "./modals/deleteModal"
 export default function MenuFormPage({
     onSubmit,
     menuItem,
     onDelete,
     onPropDelete
 }) {
+
+   
 
     const [itemName, setItemName] = useState('')
     const [itemBasePrice, setItemBasePrice] = useState('')
@@ -22,6 +24,8 @@ export default function MenuFormPage({
     const [showDeleteModal, setShowDeleteModal] = useState(false)
     const [categories, setCategories] = useState([])
     const [selectedCategory, setSelectedCategory] = useState('')
+    const [link, setLink] = useState('');
+
 
     const fetchCategories = async () => {
         await fetch('http://localhost:3000/api/category', {
