@@ -72,7 +72,7 @@ export default function AddToCartModal({ item, closeModal, handleAddToCart }) {
                                 <div>
                                     {
                                         item.additionalProps.sizes.map((size, index) => (
-                                            <div>
+                                            <div key={index || size.name}>
                                                 <input
                                                     type="radio"
                                                     id={size.name}
@@ -104,7 +104,7 @@ export default function AddToCartModal({ item, closeModal, handleAddToCart }) {
                                 <div>
                                     {
                                         item.additionalProps.ingredients.map((ingredient, index) => (
-                                            <div>
+                                            <div key={index || ingredient.name}>
                                                 <input
                                                     type="checkbox"
                                                     id={ingredient.name}

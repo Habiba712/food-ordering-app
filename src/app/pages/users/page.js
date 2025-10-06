@@ -77,7 +77,9 @@ console.log('users', users);
             <div className="mt-3 ">
                    {users ? (
                      users.map((user, index) => (
-                        <div className="flex justify-between border rounded-lg px-4 py-3 mb-3">
+                        <div 
+                        key={index || user._id}
+                        className="flex justify-between border rounded-lg px-4 py-3 mb-3">
                             <div className="grid grid-cols-3 gap-2 grow">
                                 <div className="italic text-gray-600">{user?.name || 'No name'}</div>
                                 <div className="">{user?.email}</div>

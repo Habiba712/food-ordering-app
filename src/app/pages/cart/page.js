@@ -237,7 +237,9 @@ export default function CartPage() {
                                                         <p className="whitespace-normal break-words">Extras: </p>
                                                         <div>
                                                             {item?.extras?.length > 0 ? item.extras.map((extra, index) => (
-                                                                <p className="whitespace-normal break-words  ">
+                                                                <p 
+                                                                key={index || extra.name}
+                                                                className="whitespace-normal break-words  ">
                                                                     <span className="text-gray-500 font-semibold">{extra.name}</span> +${extra.price}
 
                                                                 </p>
@@ -333,7 +335,9 @@ export default function CartPage() {
                                                         <p className="whitespace-normal break-words">Extras: </p>
                                                         <div>
                                                             {item?.extras?.length > 0 ? item.extras.map((extra, index) => (
-                                                                <p className="whitespace-normal break-words  ">
+                                                                <p 
+                                                                key={index || extra.name}
+                                                                className="whitespace-normal break-words  ">
                                                                     <span className="text-gray-500 font-semibold">{extra.name}</span> +${extra.price}
 
                                                                 </p>
