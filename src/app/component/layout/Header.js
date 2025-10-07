@@ -116,7 +116,7 @@ export default function Header() {
                                         <button
                                             onClick={() => {
                                                 signOut(),
-                                                    redirect('http://localhost:3000/pages/login')
+                                                    redirect('/pages/login')
                                             }
                                             }
                                             className='bg-red-600 rounded-full text-white px-8 py-2 cursor-pointer'>
@@ -222,7 +222,7 @@ export default function Header() {
                             <button
                                 onClick={() => {
                                     signOut(),
-                                        redirect('http://localhost:3000/pages/login')
+                                        redirect('/pages/login')
                                 }
                                 }
                                 className='bg-red-600 rounded-full text-white cursor-pointer px-8 py-2 '>
