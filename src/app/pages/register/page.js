@@ -19,7 +19,7 @@ export default function RegisterPage() {
             setError('Please fill in all fields')
         } else {
             setError('')
-            const res = await fetch('http://localhost:3000/api/register', {
+            const res = await fetch('/api/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
