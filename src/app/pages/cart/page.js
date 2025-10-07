@@ -96,7 +96,7 @@ export default function CartPage() {
     console.log('newQuantity', newQuantity);
 
     const getUserData = async () => {
-        const userData = await fetch('http://localhost:3000/api/profile', {
+        const userData = await fetch('/api/profile', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -136,7 +136,7 @@ export default function CartPage() {
         const amountToPay = amountToPayPerItem(cartItems) + deliveryFee;
 
         const res = new Promise(async (resolve, reject) => {
-            await fetch('http://localhost:3000/api/checkout', {
+            await fetch('/api/checkout', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
