@@ -20,7 +20,7 @@ export default function ImageUpload({ link, setLink }) {
 
         const imageUploadPromise =
 
-            fetch('http://localhost:3000/api/upload', {
+            fetch('/api/upload', {
                 method: 'POST',
                 body: data,
 
