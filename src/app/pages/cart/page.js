@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 import { useSession } from "next-auth/react";
 import { resolve } from "path";
 import { set } from "mongoose";
+import { redirect } from "next/navigation";
 
 export default function CartPage() {
     const { cartItems, removeItem, clearCart, updateQuantity } = useContext(CartContext);
@@ -24,6 +25,14 @@ export default function CartPage() {
     let deliveryFee = 5;
     const session = useSession();
     const userEmail = session?.data?.user?.email;
+
+     const userData = session.data?.user;
+        const status = session?.status;    
+       
+         if (status === "unauthenticated") {
+            redirect("/pages/login")
+          }
+        
 
     console.log('userEmail', userEmail);
 
@@ -172,7 +181,19 @@ export default function CartPage() {
 
     }, [])
 
-
+    if(status === 'loading'){
+        return(
+          <div>
+            <h3 className="text-center text-xl font-semibold text-gray-700 mt-10">Loading cart....</h3>
+          </div>
+        )
+    } if(!userData){
+        return(
+            <div>
+                <h3 className="text-center text-xl font-semibold text-gray-700 mt-10">Login to see your cart</h3>
+            </div>
+        )
+    }
 
 
 

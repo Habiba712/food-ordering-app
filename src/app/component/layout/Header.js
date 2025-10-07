@@ -69,7 +69,7 @@ export default function Header() {
                             <Link
                                 className="flex relative" href={'/pages/cart'}>
                                 <CartIcon className="" />
-                                {(cartItemsLocal && cartItemsLocal?.length > 0) &&
+                                {(cartItemsLocal && cartItemsLocal?.length > 0 && status === 'authenticated') &&
                                     <span
                                         className="absolute flex justify-center items-center  -top-2 -right-2 text-white  rounded-full font-bold px-1 py-1 text-xs leading-3 bg-red-600 "
                                     >
@@ -110,7 +110,12 @@ export default function Header() {
                             {
                                 status === 'authenticated' ?
                                     <div className='flex justify-between  w-full gap-4 '>
-                                        <Link onClick={() => setShowMenu(false)} href={'/pages/profile'}>{userName}</Link>
+                                        <Link onClick={() =>
+                                          setShowMenu(false)
+                                    } 
+                                        href={'/pages/profile'}
+                                        
+                                        >{userName}</Link>
                                         
                                      
                                         <button
@@ -119,7 +124,7 @@ export default function Header() {
                                             <Link onClick={() => {
                                                 
                                                 signOut()
-                                                    
+                                                setShowMenu(false)
                                             }
                                             } href={'/pages/login'}>Logout</Link>
                                         </button>
@@ -133,10 +138,10 @@ export default function Header() {
                                    
                         
                         <div className='flex justify-between  w-full gap-4 '>
-                            <button>
+                            <button onClick={() => setShowMenu(false)}>
                                 <Link className="bg-white rounded-full flex shrink items-center justify-center border-1 border-red-600 text-red-600 px-8 py-2" href={'/pages/login'}>Login</Link>
                             </button>
-                              <button>
+                              <button onClick={() => setShowMenu(false)}>
                                  <Link
 
                                 className="bg-red-600 rounded-full text-white px-8 py-2" href={'/pages/register'}>Register</Link>
@@ -222,6 +227,7 @@ export default function Header() {
 
                             <button
                                 onClick={() => {
+                                    setShowMenu(false)
                                     redirect('/pages/login'), signOut()
                                        
                                 }
@@ -231,6 +237,8 @@ export default function Header() {
                             </button>
 
                             <Link
+                                    onClick={() => setShowMenu(false)}
+
                                 className="flex relative w-fit flex shrink items-center justify-center" href={'/pages/cart'}>
                                 <CartIcon className="text-balck-800" color="black" />
                                 {(cartItemsLocal && cartItemsLocal?.length > 0) &&
@@ -248,8 +256,11 @@ export default function Header() {
 
                         : status === 'unauthenticated' &&
                         <>
-                            <Link className="bg-white rounded-full flex shrink items-center justify-centerborder-1 border-red-600 text-red-600 px-8 py-2" href={'/pages/login'}>Login</Link>
                             <Link
+                            onClick={() => setShowMenu(false)}  
+                            className="bg-white rounded-full flex shrink items-center justify-centerborder-1 border-red-600 text-red-600 px-8 py-2" href={'/pages/login'}>Login</Link>
+                            <Link
+                            onClick={() => setShowMenu(false)}  
 
                                 className="bg-red-600 rounded-full text-white px-8 py-2" href={'/pages/register'}>Register</Link>
 

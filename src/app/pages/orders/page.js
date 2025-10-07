@@ -14,8 +14,12 @@ export default function OrdersPage() {
     
  const session = useSession();
  const userData = session.data?.user;
-    const status = session.status;    
+    const status = session?.status;    
    
+     if (status === "unauthenticated") {
+        redirect("/pages/login")
+      }
+    
     
   
   const [orders, setOrders] = useState([])

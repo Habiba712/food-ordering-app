@@ -1,6 +1,6 @@
 'use client'
 
-import { useParams } from "next/navigation";
+import { redirect, useParams } from "next/navigation";
 import SectionHeaders from "../../../component/layout/SectionHeaders";
 import AdressBox from "../../../component/AdressBox";
 import { useState, useEffect } from "react";
@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../../component/AppContext";
 import OrderItemBox from "../../../component/OrderItemBox";
+import { useSession } from "next-auth/react";
 
 export default function OrdersPage() {
 
@@ -19,6 +20,15 @@ export default function OrdersPage() {
     const [totalPrice, setTotalPrice] = useState(0);
     const [currentOrder, setCurrentOrder] = useState(null);
 
+        
+     const session = useSession();
+     const userData = session.data?.user;
+        const status = session?.status;   
+        
+        
+     if (status === "unauthenticated") {
+    redirect("/pages/login")
+  }
     const addressBoxData = {
         phone,
         street,
@@ -75,11 +85,17 @@ export default function OrdersPage() {
             },
 
         }).then((res) => {
-            return res.json().then((data) => {
+            if(res.ok){
+                  return res.json().then((data) => {
                 setTotalPrice(data.amountToPay)
                 console.log('data order', (data.filter(item => item._id === id)))
                 setCurrentOrder(data.filter(item => item._id === id))
             })
+            }
+            else{
+                redirect('/pages/login')
+            }
+          
 
         }).catch((err) => {
             return new Error(err);
@@ -91,6 +107,19 @@ export default function OrdersPage() {
         getUserData();
     }, []);
     console.log('currentOrder in page', currentOrder?.amountToPay)
+    if(status === 'loading'){
+        return(
+            <div>
+                <h3 className="text-center text-xl font-semibold text-gray-700 mt-10">Loading order....</h3>
+            </div>
+        )
+    } if(!userData){
+        return(
+            <div>
+                <h3 className="text-center text-xl font-semibold text-gray-700 mt-10">Login to see your order</h3>
+            </div>
+        )
+    }
 
     return (
         <section className="mt-10 overflow-x">
