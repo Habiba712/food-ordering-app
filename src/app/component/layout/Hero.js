@@ -44,7 +44,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="relative -top-30 -z-10 right-20 w-100 md:relative ">
+            <div className="relative -top-30 -z-10 right-20 w-100 md:relative md:-right-30 md:top-0">
 
                 {/* //* the layout fill and objectFit contain allowed The
                 //* image to grow when another elemetn on the same section grew 
