@@ -6,19 +6,35 @@ import { get } from "http"
 import ViewDetails from "../../component/icons/details"
 import { redirect } from "next/navigation"
 import FilterIcon from "../../component/icons/filter"
+import { useSession } from "next-auth/react"
  
 export default function OrdersPage() {
 
 
-
+    
+ const session = useSession();
+ const userData = session.data?.user;
+    const status = session.status;    
+   
+    
+  
   const [orders, setOrders] = useState([])
   const getOrders = async () => {
     await fetch('/api/orders').then((res) => {
+      console.log('res f', res)
+      // if(res.status === loading){
+      //   setLoading(true)
+      // }
       if (res.ok) {
         return res.json().then(data => {
           setOrders(data.reverse())
           console.log('data', data)
         })
+      }
+      else {
+
+        redirect('/pages/login')
+       
       }
     }
 
@@ -27,13 +43,30 @@ export default function OrdersPage() {
 
 
   }
-
+ 
   useEffect(() => {
+    
     getOrders()
   }, [])
-  console.log('Orders Page')
+  if(status === 'loading'){
+    return(
+      <div>
+        <h3 className="text-center text-xl font-semibold text-gray-700 mt-10">Loading orders....</h3>
+      </div>
+    )
+  }
+  if(!userData){
+    return(
+      <div>
+        <h3 className="text-center text-xl font-semibold text-gray-700 mt-10">Login to see your orders</h3>
+      </div>
+    )
+  }
+
+
   return (
-    <section className="mt-10 max-w-5xl mx-auto">
+    
+      <section className="mt-10 max-w-5xl mx-auto">
       <div className="text-center">
         <UserTabs />
       </div>

@@ -3,6 +3,7 @@ import { authOptions } from "../../lib/authOptions";
 import mongoose from "mongoose";
 import User from "../../models/user.model";
 import Order from "../../models/order.model";
+import { error } from "console";
 
 
 const connectToDatabase = async () => {
@@ -21,8 +22,13 @@ export async function GET(req) {
   const user = await User.findOne({ email })
   const newURL = new URL(req.url)
   const id = newURL.searchParams.get('id');
-
-
+console.log('user', user)
+if(user === null){
+  return new Response(
+    JSON.stringify({error:'User not found'}),
+    { status: 401 }
+  )
+}
   //get all orders only for admin
   if (user.admin === true) {
     const getOrders = await Order.find()
