@@ -123,7 +123,7 @@ export default function OrdersPage() {
 
     return (
         <section className="mt-10 overflow-x">
-            <div className="text-center max-w-3xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto ">
                 <SectionHeaders  mainHeader={'Your Order'} />
 
                 <div className="flex flex-col items-center gap-4 sm:w-full 

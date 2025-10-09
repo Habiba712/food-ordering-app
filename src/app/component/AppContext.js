@@ -17,7 +17,7 @@ export function AppProvider({ children }) {
     }
   }, []);
 
-function  addToCart (product, size, extras) {
+function  addToCart (product, size, extras, userEmail)  {
 
 
 
@@ -29,6 +29,7 @@ function  addToCart (product, size, extras) {
     extras: extras,
     size: size,
     quantity: product?.quantity,
+    userEmail: userEmail,
     id: product?._id
   }
 let existingCart = JSON.parse(localStorage.getItem('cartItems') || '[]');

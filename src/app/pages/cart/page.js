@@ -195,7 +195,7 @@ export default function CartPage() {
         )
     }
 
-
+console.log('test cartItems', cartItems?.filter((item)=> item?.userEmail === userEmail))
 
 
 
@@ -208,7 +208,7 @@ export default function CartPage() {
 
             </div>
             {
-                cartItems?.length === 0 ?
+                cartItems?.filter((item)=> item?.userEmail === userEmail)?.length === 0 ?
                     <div>
                         <h4 className="text-center text-xl text-gray-500 font-semibold">
                             Your cart is empty 😢</h4>
@@ -216,7 +216,7 @@ export default function CartPage() {
                     :
                     <div className=" flex flex-col items-center  w-100 md:grid grid-cols-2 gap-4 mt-8 md:flex md:items-start" style={{ width: '100%' }}>
                         <div className="flex-col md:w-100 ">
-                            {(cartItems && cartItems.length > 0) &&
+                            {(cartItems && cartItems?.filter((item)=> item?.userEmail === userEmail)?.length > 0) &&
 
                                 cartItems.map((item, index) => (
 
@@ -466,7 +466,7 @@ export default function CartPage() {
 
                                         <button className="bg-red-600 cursor-pointer text-white font-semibold rounded-full px-6 py-3 mb-3 w-full block mx-auto text-center flex justify-around">
                                             Checkout {amountToPayPerItem(cartItems) + deliveryFee} $
-                                        </button>
+                                        </button>a
                                     </div>
 
                                 </form>

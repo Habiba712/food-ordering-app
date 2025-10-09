@@ -35,8 +35,8 @@ export default function UserTabs() {
     const pathname = usePathname();
     return (
 
-        <div className="w-full flex justify-center  items-center ">
-            <div className="w-fit flex flex-row text-sm text-2xl  gap-3 md:flex tabs ">
+        <div className="w-full flex justify-center items-center  ">
+            <div className="w-fit flex mx-auto flex-row text-sm text-2xl  gap-3 md:flex tabs ">
 
                 {isAdmin ? (
                     <>

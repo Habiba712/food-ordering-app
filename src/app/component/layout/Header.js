@@ -18,6 +18,7 @@ export default function Header() {
     const [showMenu, setShowMenu] = useState(false);
 
     const userData = session.data?.user;
+    const userEmail = userData?.email;
     const userName = userData?.name || userData?.email
     const [cartItemsLocal, setCartItemsLocal] = useState([]);
     const menuRef = useRef(null);
@@ -69,11 +70,11 @@ export default function Header() {
                             <Link
                                 className="flex relative" href={'/pages/cart'}>
                                 <CartIcon className="" />
-                                {(cartItemsLocal && cartItemsLocal?.length > 0 && status === 'authenticated') &&
+                                {(cartItemsLocal && cartItemsLocal?.filter((item)=> item?.userEmail === userEmail)?.length > 0 && status === 'authenticated') &&
                                     <span
                                         className="absolute flex justify-center items-center  -top-2 -right-2 text-white  rounded-full font-bold px-1 py-1 text-xs leading-3 bg-red-600 "
                                     >
-                                        {cartItemsLocal?.length}
+                                        {cartItemsLocal?.filter((item)=> item?.userEmail === userEmail)?.length}
                                     </span>
                                 }
                             </Link>
@@ -228,7 +229,8 @@ export default function Header() {
                             <button
                                 onClick={() => {
                                     setShowMenu(false)
-                                    redirect('/pages/login'), signOut()
+                                    signOut()
+                                    redirect('/pages/login')
                                        
                                 }
                                 }
@@ -241,11 +243,11 @@ export default function Header() {
 
                                 className="flex relative w-fit flex shrink items-center justify-center" href={'/pages/cart'}>
                                 <CartIcon className="text-balck-800" color="black" />
-                                {(cartItemsLocal && cartItemsLocal?.length > 0) &&
+                                {(cartItemsLocal && cartItemsLocal?.filter((item)=> item?.userEmail === userEmail)?.length > 0) &&
                                     <span
                                         className="absolute flex justify-center items-center -top-2 -right-3 text-white bg-red-600 rounded-full font-bold px-1 py-1 text-xs leading-3 "
                                     >
-                                        {cartItemsLocal?.length}
+                                        {cartItemsLocal?.filter((item)=> item?.userEmail === userEmail)?.length}
                                     </span>
                                 }
                             </Link>

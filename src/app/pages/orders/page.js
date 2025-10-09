@@ -155,7 +155,7 @@ export default function OrdersPage() {
       {/* Mobile version */}
 
       {orders.map((order, index) => (
-        <div key={index || order._id} className="w-100 mx-auto border-t border-gray-200 flex flex-cols grid grid-cols-1 gap-4 py-3 text-sm md:hidden mb-5">
+        <div key={index || order._id} className="w-100 mx-auto border-t border-gray-200 flex flex-cols grid grid-cols-1 gap-4 py-3 px-4 text-sm md:hidden mb-5">
 
           <div className="flex justify-between">
             <div>

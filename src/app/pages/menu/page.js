@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { set } from "mongoose";
 import AddToCartModal from "../../component/modals/addToCartModal";
 import toast from "react-hot-toast";
+import { useSession } from "next-auth/react";
 
 
 export default function MenuPage() {
@@ -16,6 +17,8 @@ export default function MenuPage() {
     const [openModal, setOpenModal] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
 
+    const Session = useSession();
+const user = Session?.data?.user;
     const getCategories = async () =>{
         await fetch('/api/category').then(res=>{
             if(res.ok){
@@ -40,8 +43,9 @@ export default function MenuPage() {
         console.log('item', item);
         console.log('size', selectedSize);
         console.log('extras', selectedExtras);
+        console.log('user', user?.email);
       
-        addToCart(item,selectedSize,selectedExtras);
+        addToCart(item,selectedSize,selectedExtras,user?.email);
         toast.success('Item added to cart successfully!', {
             position: 'top-center',
             duration: 3000,
