@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
        
       >
         <AppProvider> 
-          <main className="w-fill mx-auto p-4">
+          <main className=" mx-auto p-4 max-w-5xl">
         <Toaster />
           <Header />
           {children}
