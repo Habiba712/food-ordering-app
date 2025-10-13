@@ -3,8 +3,8 @@
  
 section.hero{
 
-        @apply grid;
-        grid-template-columns: .4fr .6fr;
+        /* @apply grid;
+        grid-template-columns: .4fr .6fr justify-items-center items-center; */
 }
 
 input[type="text"],

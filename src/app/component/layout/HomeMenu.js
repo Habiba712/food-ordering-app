@@ -41,7 +41,8 @@ export default function HomeMenu() {
                 {/* <div className="absolute -left-10 -top-60 text-left -z-1 rotate-160">
                     <Image src={cornDog} width={200} height={90} alt={'salad_leaf'} />
                 </div> */}
-                <div className="fixed top-60 left-0 -rotate-90 p-0 -z-1">
+
+             <div className="fixed top-60 left-0 -rotate-90 p-0 -z-1">
                     <Image src={chopsticks_Up} width={400} height={395} alt={'salad_leaf'} />
                 </div>
             </div>

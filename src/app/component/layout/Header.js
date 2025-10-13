@@ -57,8 +57,8 @@ export default function Header() {
                 lg:w-fit lg:shrink-1 
                 ">
                     <div className='md:flex md:justify-center w-full'>
-                        <Link className="text-red-700  font-semibold text-2xl mr-2 ml-3" href="/">
-                            Annyeong Kitchen
+                        <Link className="text-red-700  font-bold text-2xl mr-2 ml-3" href="/">
+                           LOGO
                         </Link>
 
                     </div>
@@ -175,14 +175,14 @@ export default function Header() {
 
 
         {/* // desktop header */}
-        <header className="hidden md:flex justify-between  gap-4 w-fill
+        <header className="hidden md:grid grid-cols-3 gap-7 w-fill
         
         ">
             <div className='flex justify-center items-center'>
               
-                    <div className='flex justify-center items-center  borderw-full'>
-                        <Link className="text-red-700  font-semibold text-2xl mr-2 ml-3" href="/">
-                            Annyeong Kitchen
+                    <div className='flex justify-start  items-center w-full'>
+                        <Link className="text-red-700  font-bold text-2xl mr-2 ml-3" href="/">
+                            LOGO
                         </Link>
 
                     </div>
@@ -200,7 +200,7 @@ export default function Header() {
 
 
 
-            <nav className="flex items-center  justify-center gap-4 grow-1 text-gray-500 
+            <nav className="flex items-center  w-full  justify-center gap-4 grow-1 text-gray-700 font-bold font-sans-serif
            
             ">
                 <Link href={'/'}>Home</Link>
@@ -212,7 +212,7 @@ export default function Header() {
             </nav>
 
 
-            <nav className="flex items-center gap-2 text-gray-500  rounded p-1">
+            <nav className="flex w-full items-center gap-2 text-gray-500  rounded p-1">
                 {
                     status === 'authenticated' ?
                         <>

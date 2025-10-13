@@ -6,12 +6,12 @@ import ramen_hero from "../../../../public/images/ramen_mushroom.png"
 export default function Hero() {
 
     return (
-        <section className="hero">
+        <section className="grid grid-cols-2 place-items-center h-full  justify-items-center items-center">
 
             {/* //* at first we used grid grid-cols-2 to get two identical cols, but 
             //* if we want to have a column shorter than the other we move to css, check global css */}
 
-            <div className="py-12">
+            <div className="">
                 <h1 className="text-4xl font-semibold leading-normal">
                     <span className="text-red-500 text-3xl font-semibold">안녕하세요! </span>
                     Welcome to our restaurant !!
@@ -44,14 +44,36 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="relative -top-30 -z-10 right-20 w-100 md:relative md:-right-30 md:top-0">
+            <div className="hidden md:block">
 
                 {/* //* the layout fill and objectFit contain allowed The
                 //* image to grow when another elemetn on the same section grew 
                 //* like the h1, when we used text-4xl on it  */}
 
-                <Image layout={'fill'}
-                    objectFit={"contain"}
+                <Image 
+                // layout={'fill'}
+                //     objectFit={"contain"}
+                    width={400}
+                    height={400}
+                    alt={"pizza-hero"} src={ramen_hero}
+
+                />
+
+            </div>
+              <div className="border md:hidden ">
+
+                {/* //* the layout fill and objectFit contain allowed The
+                //* image to grow when another elemetn on the same section grew 
+                //* like the h1, when we used text-4xl on it  */}
+
+                <Image 
+                // layout={'fill'}
+                //     objectFit={"contain"}
+                className="absolute -right-40 top-20 rotate-100 "
+                    
+                    width={400}
+                    height={400}
+                  
                     alt={"pizza-hero"} src={ramen_hero}
 
                 />

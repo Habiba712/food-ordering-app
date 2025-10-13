@@ -466,7 +466,7 @@ console.log('test cartItems', cartItems?.filter((item)=> item?.userEmail === use
 
                                         <button className="bg-red-600 cursor-pointer text-white font-semibold rounded-full px-6 py-3 mb-3 w-full block mx-auto text-center flex justify-around">
                                             Checkout {amountToPayPerItem(cartItems) + deliveryFee} $
-                                        </button>a
+                                        </button>
                                     </div>
 
                                 </form>

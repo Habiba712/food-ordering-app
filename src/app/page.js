@@ -11,7 +11,7 @@ export default function Home() {
       {/* //TODO We're going to start by creating the header */}
       <Hero />
       <HomeMenu />
-      <section className="text-center mt-10" id="about">
+      <section className="text-center mt-7" id="about">
         {/* //TODO We're going to create the about section */}
         <SectionHeaders subHeader={'Our Story'} mainHeader={'About us'}></SectionHeaders>
         <div className="text-gray-700 text-sm mb-3 text-center mx-14 flex flex-col gap-4">
