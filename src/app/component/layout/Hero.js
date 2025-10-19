@@ -48,7 +48,7 @@ export default function Hero() {
             </div>
 
            
-              <div>
+              <div className="relative">
 
                 {/* //* the layout fill and objectFit contain allowed The
                 //* image to grow when another elemetn on the same section grew 
@@ -57,7 +57,7 @@ export default function Hero() {
                 <Image 
                 // layout={'fill'}
                 //     objectFit={"contain"}
-                className="absolute -right-40 top-20 rotate-100 "
+                className="absolute -top-60 -right-20 rotate-100 scale-220"
                     
                     width={400}
                     height={400}
