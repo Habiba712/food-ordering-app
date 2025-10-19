@@ -47,26 +47,24 @@ export default function Header() {
     return (
         <>
             {/* // mobile header */}
- <header className="md:hidden w-fill flex items-center justify-between shrink-1
+ <header className="hero-section-desktop w-full px-2 py-2
         
         ">
-            <div className='w-full flex'>
-                <div className="w-full flex justify-between 
-                sm:w-100 sm:flex sm:justify-between sm:grow-1 
-                md:w-fit md:shrink-1 md:flex p-4  
-                lg:w-fit lg:shrink-1 
+            <div className=' w-full'>
+                <div className="flex justify-between
+               
                 ">
-                    <div className='md:flex md:justify-center w-full'>
-                        <Link className="text-red-700  font-bold text-2xl mr-2 ml-3" href="/">
+                    <div className='flex justify-start'>
+                        <Link className="text-red-700 flex font-bold text-2xl " href="/">
                            LOGO
                         </Link>
 
                     </div>
 
-                    <div className="sm:text-red-700 cursor-pointer"
+                    <div className=" w-50 text-red-700 cursor-pointer"
                        
                     >
-                        <div className="flex flex-row items-center gap-3 text-black">
+                        <div className="flex justify-end items-center gap-3 text-black">
                             <Link
                                 className="flex relative" href={'/pages/cart'}>
                                 <CartIcon className="" />

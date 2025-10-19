@@ -22,16 +22,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth overflow-x-hidden">
+    <html lang="en" className="scroll-smooth 
+    overflow-hidden
+    full-parent">
       <body
         className={openSans.className}
-        style={{
-          overflowX: 'hidden'
-        }}
+        
        
       >
         <AppProvider> 
-          <main className=" mx-auto px-4 max-w-4xl">
+          <main className="
+          main-mobile
+          main-desktop
+          
+          ">
         <Toaster />
           <Header />
           {children}
