@@ -9,7 +9,7 @@ export default function Hero() {
 
         <>  
         {/* mobile */}
-        <section className="hero-section-desktop grid grid-cols-2 h-full px-2 items-center">
+        <section className="hero-section-desktop grid grid-cols-2 h-full px-2 items-center overflow-x-hidden">
 
             {/* //* at first we used grid grid-cols-2 to get two identical cols, but 
             //* if we want to have a column shorter than the other we move to css, check global css */}

@@ -22,11 +22,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth 
-    overflow-hidden
-    full-parent">
+    <html lang="en" className="scroll-smooth overflow-x-hidden full-parent">
       <body
-        className={openSans.className}
+        className={`${openSans.className} overflow-x-hidden `}
         
        
       >
@@ -34,6 +32,7 @@ export default function RootLayout({ children }) {
           <main className="
           main-mobile
           main-desktop
+          overflow-x-hidden
           
           ">
         <Toaster />

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
- 
+ html, body {
+  overflow-x: hidden;
+  border: 1px solid red;
+  min-height: 100%;
+}
 section.hero{
 
         /* @apply grid;
@@ -103,7 +107,7 @@ nav > a:hover {
 @media (max-width: 640px) {
     .hero-section-mobile{
         display: none;
-         overflow:hidden;
+         overflow-x:hidden;
         
     }
      .main-mobile{
