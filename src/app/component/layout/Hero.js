@@ -30,7 +30,7 @@ export default function Hero() {
                     right here.
                 </p>
                 <div className="flex gap-4 text-sm ">
-                    <button className="items-center text-white uppercase py-2 px-4 flex gap-2 rounded-full bg-red-600 "
+                    <button className="items-center text-white uppercase py-2 px-4 flex gap-2 rounded-full bg-red-600 flex items-center justify-between  whitespace-nowrap"
 
                     >
                         Order now
@@ -38,7 +38,9 @@ export default function Hero() {
 
 
                     </button>
-                    <button className=" text-gray-700 semibold py-2 px-4 flex gap-2 rounded-full">
+                    <button
+                    type="button"
+                    className="text-gray-700 semibold py-2 px-4 flex gap-2 rounded-full flex items-center justify-between border border-gray-400 whitespace-nowrap uppercase" >
                         Learn more
                         <ArrowRight />
 
@@ -92,7 +94,7 @@ export default function Hero() {
                     right here.
                 </p>
                 <div className="flex gap-4 text-sm ">
-                    <button className="items-center text-white uppercase py-2 px-4 flex gap-2 rounded-full bg-red-600 "
+                    <button className="items-center text-white uppercase py-2 px-4 flex gap-2 rounded-full bg-red-600 flex items-center justify-between  whitespace-nowrap"
 
                     >
                         Order now
@@ -100,7 +102,9 @@ export default function Hero() {
 
 
                     </button>
-                    <button className=" text-gray-700 semibold py-2 px-4 flex gap-2 rounded-full">
+                    <button
+                    type="button"
+                    className="text-gray-700 semibold py-2 px-4 flex gap-2 rounded-full flex items-center justify-between border border-gray-400 whitespace-nowrap uppercase" >
                         Learn more
                         <ArrowRight />
 
