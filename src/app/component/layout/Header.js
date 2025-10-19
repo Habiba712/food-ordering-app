@@ -47,8 +47,7 @@ export default function Header() {
     return (
         <>
             {/* // mobile header */}
- <header className="hero-section-desktop w-full px-2 py-2
-        
+ <header className="hero-section-desktop w-full px-2 py-2  
         ">
             <div className=' w-full'>
                 <div className="flex justify-between
