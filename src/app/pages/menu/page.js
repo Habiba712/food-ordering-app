@@ -87,9 +87,9 @@ const user = Session?.data?.user;
     return (
         <section className="mt-10">
 
-            <div className="mx-auto mt-4">
+            <div className="mx-auto mt-4 px-3">
                  
-                  <h1 className="text-4xl font-semibold leading-normal">
+                  <h1 className="text-4xl font-semibold leading-normal text-center">
                 <span className="text-red-500 text-3xl font-semibold">안녕하세요! </span>
                 Welcome to our restaurant !!
             </h1>

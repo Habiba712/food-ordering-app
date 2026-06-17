@@ -6,6 +6,7 @@ import HomeMenu from "./component/layout/HomeMenu";
 import SectionHeaders from "./component/layout/SectionHeaders";
  
 export default function Home() {
+  
   return (
     <>
 
