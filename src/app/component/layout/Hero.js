@@ -54,25 +54,7 @@ export default function Hero() {
             </div>
 
            
-              <div className="relative -z-100">
-
-                {/* //* the layout fill and objectFit contain allowed The
-                //* image to grow when another elemetn on the same section grew 
-                //* like the h1, when we used text-4xl on it  */}
-
-                <Image 
-                // layout={'fill'}
-                //     objectFit={"contain"}
-                className="absolute -top-40 -right-20 rotate-100 scale-220"
-                    
-                    width={400}
-                    height={400}
-                  
-                    alt={"pizza-hero"} src={ramen_hero}
-
-                />
-
-            </div>
+            
         </section>
 
 
