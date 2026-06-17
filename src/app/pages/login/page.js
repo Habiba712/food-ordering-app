@@ -21,7 +21,7 @@ export default function LoginPage () {
         setLoginInProgress(false)
     }
     return(
-        <section>
+        <section className="px-3">
             <h1 className="text-center text-red-700 text-2xl font-semibold mt-3">Login</h1>
 
             <form className="w-x flex flex-col justify-center sm:flex sm:flex-col sm:mx-auto sm:w-100 md:flex md:flex-col md:w-sm mx-auto md:p-3 md:justify-center md:gap-4 shrink-1" onSubmit={handleFormSubmit}>
