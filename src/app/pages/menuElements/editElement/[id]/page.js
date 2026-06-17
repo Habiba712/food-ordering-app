@@ -27,7 +27,7 @@ export default function NewElementPage() {
     const { id } = useParams()
 
     const getUserData = async () => {
-        const userData = await fetch('http://localhost:3000/api/profile', {
+        const userData = await fetch('/api/profile', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ export default function NewElementPage() {
     const handleDeleteMenuItem = async (id) => {
         console.log('we are here', id)
         const deleteItem = new Promise(async (resolve, reject) => {
-            const response = await fetch('http://localhost:3000/api/menuItems/?id=' + id, {
+            const response = await fetch('/api/menuItems/?id=' + id, {
                 method: 'DELETE',
             }).then(res => {
                 if (res.ok) {
@@ -85,7 +85,7 @@ export default function NewElementPage() {
         }
 
         const deleteItem = new Promise(async (resolve, reject) => {
-            const response = await fetch(`http://localhost:3000/api/menuItems/?id=${id}&label=${label}&prop_id=${propId}`, {
+            const response = await fetch(`/api/menuItems/?id=${id}&label=${label}&prop_id=${propId}`, {
                 method: 'DELETE',
 
             }).then(res => {
@@ -112,7 +112,7 @@ export default function NewElementPage() {
 
         const { props, ...data } = res
         const newItem = new Promise(async (resolve, reject) => {
-            await fetch('http://localhost:3000/api/menuItems', {
+            await fetch('/api/menuItems', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -143,7 +143,7 @@ export default function NewElementPage() {
 
     const getItem = async () => {
 
-        await fetch('http://localhost:3000/api/menuItems/', {
+        await fetch('/api/menuItems/', {
             method: 'GET',
 
             headers: {
@@ -193,7 +193,7 @@ export default function NewElementPage() {
 
 
     return (
-        <section className="mt-8">
+        <section className="mt-8 px-3">
             <UserTabs />
             <div className="max-w-md mx-auto mt-8 flex justify-center items-center gap-4 border border-2 rounded-full py-2 hover:border-green-500 cursor-pointer">
                 <Link

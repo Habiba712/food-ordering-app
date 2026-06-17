@@ -19,7 +19,7 @@ export async function GET() {
 
 export async function PUT(req) {
   const session = await connectToDatabase();
-// http://localhost:3000/pages/users/editUser/68228fde403a1735a9b377c1
+// /pages/users/editUser/68228fde403a1735a9b377c1
 
   const {id, ...data} = await req.json()
   console.log('data', data)

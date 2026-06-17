@@ -8,7 +8,7 @@ export default function UserEditPage({userInfo, userInfoFunctions, onSave}) {
 
     console.log('user Info Admin', userInfo.admin);
     return (
-        <form className=" md:flex gap-2 max-w-2xl mx-auto mt-4" onSubmit={onSave}>
+        <form className=" md:flex gap-2 max-w-2xl mx-auto mt-4 px-3" onSubmit={onSave}>
 
                 <div className="flex flex-col  gap-2">
 
@@ -20,6 +20,7 @@ export default function UserEditPage({userInfo, userInfoFunctions, onSave}) {
                     <label className="text-sm font-semibold">First and Last name</label>
                      <input
                         value={userInfo.userName}
+                        
                         onChange={(e) => userInfoFunctions.setUserName(e.target.value)}
                         type="text" placeholder="Enter your First and Last name" />
                     <label className="text-sm font-semibold">Email</label>   

@@ -36,16 +36,18 @@ export default function UserTabs() {
     return (
 
         <div className="w-full flex justify-center items-center  ">
-            <div className="w-fit flex mx-auto flex-row text-sm text-2xl  gap-3 md:flex tabs ">
+            <div className="w-fit flex mx-auto flex-row text-sm text-2xl  gap-3 md:flex  ">
 
                 {isAdmin ? (
-                    <>
-                        <Link
+                    <div className="flex justify-center items-center flex-wrap gap-3 ">
+                      <div className="tabs">  <Link
                             href={'/pages/profile'}
 
                             className={`${pathname === '/pages/profile' ? 'active' : ''}`}>Profile
-                        </Link>
+                        </Link></div>
+<div className="tabs">
 
+    
                         <Link href={'/pages/categories'}
 
                             className={`${pathname === '/pages/categories' ? 'active' : ''}`}
@@ -53,30 +55,41 @@ export default function UserTabs() {
                         >Categories
                         </Link>
 
+</div>
 
-                        <Link href={'/pages/menuElements'} className={`${pathname.includes('/menuElements') ? 'active' : ''}`}>Menu Items
+                       <div className="tabs">
+                         <Link href={'/pages/menuElements'} className={`${pathname.includes('/menuElements') ? 'active' : ''}`}>Menu Items
                         </Link>
+                       </div>
 
-                        <Link href={'/pages/users'} className={`${pathname.includes('users') ? 'active' : ''}`}>Users
+                       <div className="tabs">
+                         <Link href={'/pages/users'} className={`${pathname.includes('users') ? 'active' : ''}`}>Users
                         </Link>
+                        </div>
 
-                        <Link href={'/pages/orders'} className={`${pathname === '/pages/orders' ? 'active' : ''}`}>Orders
+                        <div className='tabs'>
+                            <Link href={'/pages/orders'} className={`${pathname === '/pages/orders' ? 'active' : ''}`}>Orders
                         </Link>
-                    </>
+                        </div>
+                    </div>
 
 
 
                 )
                     :
-                    <> <Link
+                    <> 
+                <div className="tabs"> <Link
                         href={'/pages/profile'}
 
                         className={`${pathname === '/pages/profile' ? 'active' : ''}`}>Profile
                     </Link>
+                    </div>
 
 
-                        <Link href={'/pages/orders'} className={`${pathname === '/pages/orders' ? 'active' : ''}`}>Orders
+                       <div className="tabs">
+                         <Link href={'/pages/orders'} className={`${pathname === '/pages/orders' ? 'active' : ''}`}>Orders
                         </Link>
+                       </div>
 
                     </>
 

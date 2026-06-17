@@ -15,7 +15,7 @@ export default function UsersPage() {
     const [admin, setAdmin] = useState();
 
     const getUsersData = async () => {
-        const userData = await fetch('http://localhost:3000/api/users', {
+        const userData = await fetch('/api/users', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

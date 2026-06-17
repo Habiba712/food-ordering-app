@@ -28,7 +28,7 @@ export default function MenuFormPage({
 
 
     const fetchCategories = async () => {
-        await fetch('http://localhost:3000/api/category', {
+        await fetch('/api/category', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -71,7 +71,7 @@ console.log('selectedCategory', selectedCategory)
 
 
     return (
-        <form className="mt-8" onSubmit={(ev) => 
+        <form className="mt-8 px-3" onSubmit={(ev) => 
             onSubmit(ev, 
                         { itemName, 
                           itemBasePrice, 
@@ -106,7 +106,7 @@ console.log('selectedCategory', selectedCategory)
                         placeholder="Base Price"
                         type="number" />
                     <label>Category</label>
-                    <select onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory}>
+                    <select onChange={(e) => setSelectedCategory(e.target.value || categories[0]._id)} value={selectedCategory}>
                         {
                             categories.length > 0 && (
                                 categories.map((item, index) => (

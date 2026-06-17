@@ -48,7 +48,7 @@ export default function ImageUpload({ link, setLink }) {
 
                 <div className="flex justify-center items-center">
                     <Image
-                        className="rounded-full bg-gray-100 text-center"
+                        className="rounded-full bg-gray-100 text-center object-cover aspect-square"
                         src={link
                             ? link : "/images/imagePlaceholder.jpg"
                         } width={100} height={100} alt="userImage" />
@@ -61,12 +61,18 @@ export default function ImageUpload({ link, setLink }) {
                 </div>
             </div>
             <div className="cursor-pointer  flex justify-center items-center">
-
+ <label
+                                    htmlFor="file-upload"
+                                    className=" block w-fit rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-400 focus:border-transparent focus:outline-none focus:ring-1 focus:ring-blue-300">Upload Image </label>
 
                 <input
+                 type="file"
+                                    id="file-upload"
                     onChange={handleImageUplaod}
-                    className="cursor-pointer w-30 border text-sm rounded-full px-4 py-2"
-                    type="file" />
+                    className="hidden mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:border-transparent focus:outline-none focus:ring-1 focus:ring-blue-300"
+                                    placeholder="Upload an image"
+                    
+                    />
 
 
 

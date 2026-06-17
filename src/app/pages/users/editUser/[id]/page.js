@@ -34,7 +34,7 @@ export default function UserPage() {
     async function handleEditUser(e) {
         e.preventDefault();
         const savingPromise = new Promise((resolve, reject) => {
-            fetch('http://localhost:3000/api/users', {
+            fetch('/api/users', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -77,7 +77,7 @@ export default function UserPage() {
 
 
     const getUsersData = async () => {
-        const userData = await fetch('http://localhost:3000/api/users', {
+        const userData = await fetch('/api/users', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -104,7 +104,7 @@ export default function UserPage() {
     }
 
     const getUserData = async () => {
-        const userData = await fetch('http://localhost:3000/api/profile', {
+        const userData = await fetch('/api/profile', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

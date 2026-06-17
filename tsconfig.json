@@ -21,15 +21,16 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "esModuleInterop": true
   },
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx", 
-    "src/app/api/auth/[...nextauth]/route.js", 
-    "src/app/api/profile/route.js"  
+    "**/*.tsx",
+    "src/app/api/auth/[...nextauth]/route.js",
+    "src/app/api/profile/route.js"
   ],
   "exclude": [
     "node_modules"

@@ -6,11 +6,7 @@ import ProviderWrapper from "../app/providerWrapper";
 import { Toaster } from "react-hot-toast";
 import { Open_Sans } from "next/font/google";
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "500", "900"],
-  adjustFontFallback: false, // Prevents production layout build override crashes
-});
+
 
 const openSans = Open_Sans({
   subsets: ["latin"],

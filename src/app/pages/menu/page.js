@@ -99,38 +99,40 @@ const user = Session?.data?.user;
                         <div key={index || cat._id} className="mt-10">
                               <SectionHeaders key={index || cat._id}
                             mainHeader={cat.name}/>
-                            <div className="md:grid grid-cols-3 gap-4 mt-4">
+                            <div className="sm:grid sm:grid-cols-1 md:grid md:grid-cols-3 md:gap-4 md:mt-4 ">
                                 {items.filter((item)=> item.category === cat._id).map((item, i)=>(
-                                     <div className="mx-auto w-80 md:flex flex-col 
-                                                justify-content  duration-300 ease-in
-                                                mb-3
-                                                "
+                                     <div className="flex flex-col gap-1 mb-3"
                                                 key={i || item._id}
                                                 style={{
                                                     "background":"linear-gradient(135deg,rgba (255,255,255,0.1),rgba(255,255,255,0))",
                                                     "WebkitBackdropFilter": "blur(20px)",
                                                     "backdropFilter":"blur(20px)",
                                                     "boxShadow":"0 8px 20px 0 rgba(0,0,0,0.37)",
-                                                    "border":"1px solid rgba(255,255,255,0.18)",
+                                                    // "border":"1px solid rgba(255,255,255,0.18)",
                                                     "borderRadius":"20px",
                                                 }}
                                                 >
-                                                   <div className="w-[200px] h-[200px] relative mt-4 mx-auto">
-                                                                   <Image
+                                                   
+                                                                  <div className="pt-4 px-4 w-full flex justify-center"><Image
+                                                                   width={300}
+                                                                   height={300}
                                                                      src={item.itemImage}
                                                                      alt="userImage"
-                                                                     fill
-                                                                     className="object-cover rounded-lg"
+                                                                     
+                                                                     className="object-cover aspect-square rounded-lg"
                                                                    />
-                                                                 </div>
-                                                    <h4 className="text-xl font-semibold text-center mb-2">{item.itemName}</h4>
-                                                    <p className="text-gray-700 text-sm mb-3 text-center mx-14 line-clamp-3 ">{item.itemProperties}</p>
-                                                    <button className="text-white font-semibold bg-red-600 rounded-full px-6 py-3 mb-3 w-fit block mx-auto text-center flex justify-around"
-                                                    type="button"
+                                                                    </div> 
+                                                                
+                                                    <h4 className=" font-semibold text-center py-2 text-xl">{item.itemName}</h4>
+                                                    <p className="text-gray-700 text-sm px-5 text-center line-clamp-3 ">{item.itemProperties}</p>
+                                                    <div className="px-4 flex justify-center items-center py-4 w-full"
+                                                    ><button className="w-full text-white font-semibold bg-red-600 rounded-full py-4 px-3 mx-auto text-center text-md"
+                                                   
                                                     onClick={() => 
                                                         openAddToCartModal(item)
                                                     }
-                                                    > Add to cart {item.itemBasePrice} £</button>
+                                                    > Add to cart {item.itemBasePrice} £</button></div>
+                                                    
                                                 </div>
                                 ))}
                             </div>

@@ -29,10 +29,10 @@ export default function MenuItemsPage() {
   }, [])
 
   return (
-    <section classname="mt-8">
+    <section classname="mt-8 px-3">
       <UserTabs />
 
-      <div className="max-w-md mx-auto mt-8 flex justify-center items-center gap-4 border border-2 rounded-full py-2 hover:border-green-500 cursor-pointer mb-6">
+      <div className="max-w-md mx-auto mt-8 flex justify-center items-center gap-4 border border-2 rounded-full py-2 hover:border-green-500 cursor-pointer mb-6 mx-2">
         <Link
           href={"/pages/menuElements/newElement"}
         >
@@ -41,7 +41,7 @@ export default function MenuItemsPage() {
         <ArrowRight />
       </div>
 
-      <div className="sm:flex flex-col md:grid md:grid-cols-3 md:gap-3 md:mt-8 md:max-w-2xl md:mx-auto">
+      <div className="sm:flex flex-col md:grid md:grid-cols-3 md:gap-3 md:mt-8 md:max-w-2xl md:mx-auto px-3">
         {allItems?.map((item, index) => (
           <Link key={index || item._id}
             href={

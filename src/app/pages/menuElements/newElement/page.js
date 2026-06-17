@@ -17,7 +17,7 @@ export default function NewElementPage() {
     const [selectedCategory, setSelectedCategory] = useState('')
 
     const getUserData = async () => {
-        const userData = await fetch('http://localhost:3000/api/profile', {
+        const userData = await fetch('/api/profile', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -35,33 +35,37 @@ export default function NewElementPage() {
     }
 
     const handleNewItem = async (ev, res) => {
-        ev.preventDefault();
-        const {props, ...data} = res
-        console.log('we re here', data)
-        const newItem = new Promise(async (resolve, reject) => {
-           await fetch('http://localhost:3000/api/menuItems', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({data, props})
-            }).then(res =>{
-                if(res.ok){
-                    resolve(res)
-                }
-                else{
-                    reject(res);
-                }
-            })
+    ev.preventDefault();
+    const { props, ...data } = res;
+    console.log('Sending payload data:', data);
 
-        })
+    // 1. Define the fetch operation directly as a standard Promise sequence
+    const createItemPromise = fetch('/api/menuItems', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ data, props })
+    }).then(async (response) => {
+        if (!response.ok) {
+            // Read error text or fallback to generic reject message
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.message || 'Server error occurred');
+        }
+        return response.json(); // Clean fulfillment link for toast success tracking
+    });
 
-       await  toast.promise(newItem,{
+    // 2. Pass the direct fetch Promise chain straight to your hot toast handler
+    try {
+        await toast.promise(createItemPromise, {
             loading: 'Creating Item...',
-            success: 'Item Created !',  
-            error: 'Something went wrong'
-        })
+            success: 'Item Created!',  
+            error: (err) => err.message || 'Something went wrong'
+        });
+    } catch (error) {
+        console.error('Item creation pipeline crashed:', error);
     }
+};
     const newItem = {
         itemName,
         itemBasePrice,
