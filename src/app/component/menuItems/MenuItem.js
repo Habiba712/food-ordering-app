@@ -10,7 +10,7 @@ export default function MenuItem({item}) {
     return (
         <>
             <div className="z-1 flex flex-col 
-            justify-content  duration-300 ease-in my-3 w-70 mx-auto
+            justify-between  duration-300 ease-in my-3 w-70 mx-auto
             "
             style={{
                 "background":"linear-gradient(135deg,rgba (255,255,255,0.1),rgba(255,255,255,0))",
@@ -21,12 +21,14 @@ export default function MenuItem({item}) {
                 "borderRadius":"20px",
             }}
             >
-               <div className="w-[200px] h-[200px] relative mt-4 mx-auto">
+               <div className=" mx-auto p-4">
                                <Image
+                                 width={300}
+                                 height={300}
                                  src={item.itemImage}
                                  alt="userImage"
-                                 fill
-                                 className="object-cover rounded-lg"
+                                 
+                                 className="object-cover aspect-square rounded-lg"
                                />
                 </div>
                 <h4 className="text-xl font-semibold text-center mb-2">{item.itemName}</h4>

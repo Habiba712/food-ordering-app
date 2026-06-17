@@ -50,7 +50,7 @@ export default function HomeMenu() {
                 <SectionHeaders subHeader={'CHECK HERE'} mainHeader={'Our Best Sellers'} />
 
             </div>
-            <div className="md:grid grid-cols-3 gap-4">
+            <div className="px-4 md:grid grid-cols-3 gap-4">
                 {
                     allItems?.map((item, index) => {
                         return (
