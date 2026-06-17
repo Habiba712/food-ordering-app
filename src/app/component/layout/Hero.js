@@ -4,11 +4,11 @@ import Image from "next/image";
 import pizza_hero from "../../../../public/images/pizza-hero.png"
 import ArrowRight from "../icons/arrow_right";
 import ramen_hero from "../../../../public/images/ramen_mushroom.png"
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 
 
 export default function Hero() {
-
+const router = useRouter();
     return (
 
         <>  
@@ -34,8 +34,9 @@ export default function Hero() {
                     right here.
                 </p>
                 <div className="flex gap-4 text-sm ">
-                    <button className="items-center text-white uppercase py-2 px-4 flex gap-2 rounded-full bg-red-600 flex items-center justify-between  whitespace-nowrap"
 
+                    <button className="items-center text-white uppercase py-2 px-4 flex gap-2 rounded-full bg-red-600 flex items-center justify-between  whitespace-nowrap"
+                    onClick={()=>router.push('/pages/menu')}
                     >
                         Order now
                         <ArrowRight />
@@ -81,7 +82,7 @@ export default function Hero() {
                 </p>
                 <div className="flex gap-4 text-sm ">
                     <button className="items-center text-white uppercase py-2 px-4 flex gap-2 rounded-full bg-red-600 flex items-center justify-between  whitespace-nowrap cursor-pointer"
-onClick={() => redirect('/pages/menu')}
+                    onClick={()=>router.push('/pages/menu')}
                     >
                         Order now
                         <ArrowRight />
