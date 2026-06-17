@@ -1,7 +1,11 @@
+'use client'
+
 import Image from "next/image";
 import pizza_hero from "../../../../public/images/pizza-hero.png"
 import ArrowRight from "../icons/arrow_right";
 import ramen_hero from "../../../../public/images/ramen_mushroom.png"
+import { redirect } from "next/navigation";
+
 
 export default function Hero() {
 
@@ -94,8 +98,8 @@ export default function Hero() {
                     right here.
                 </p>
                 <div className="flex gap-4 text-sm ">
-                    <button className="items-center text-white uppercase py-2 px-4 flex gap-2 rounded-full bg-red-600 flex items-center justify-between  whitespace-nowrap"
-
+                    <button className="items-center text-white uppercase py-2 px-4 flex gap-2 rounded-full bg-red-600 flex items-center justify-between  whitespace-nowrap cursor-pointer"
+onClick={() => redirect('/pages/menu')}
                     >
                         Order now
                         <ArrowRight />

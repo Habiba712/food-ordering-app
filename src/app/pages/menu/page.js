@@ -150,7 +150,9 @@ const user = Session?.data?.user;
           
            {
                 openModal && (
-                    <AddToCartModal closeModal={setOpenModal} item={selectedItem} 
+                    <AddToCartModal 
+                    closeModal={setOpenModal} 
+                    item={selectedItem} 
                     handleAddToCart={handleAddtocart}
                     />
                 )

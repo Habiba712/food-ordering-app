@@ -8,6 +8,9 @@ import { CartContext } from '../../component/AppContext';
 import { useEffect, useState, useRef } from 'react';
 import CartIcon from '../icons/cart';
 import HamburgerMenu from '../icons/hamburgerMenu';
+import logo from "../../../../public/logo.png"
+import Image from 'next/image';
+
 
 export default function Header() {
 
@@ -54,8 +57,8 @@ export default function Header() {
                
                 ">
                     <div className='flex justify-start'>
-                        <Link className="text-red-700 flex font-bold text-2xl " href="/">
-                           LOGO
+                        <Link className="text-red-700 flex font-bold text-2xl pr-3 py-3" href="/">
+                           <Image src={logo} width={200} height={200} alt={'logo'} />
                         </Link>
 
                     </div>
@@ -178,8 +181,8 @@ export default function Header() {
             <div className='flex justify-center items-center'>
               
                     <div className='flex justify-start  items-center w-full'>
-                        <Link className="text-red-700  font-bold text-2xl mr-2 ml-3" href="/">
-                            LOGO
+                        <Link className="text-red-700  pr-3 py-3 font-bold text-2xl mr-2 ml-3" href="/">
+                            <Image src={logo} width={200} height={200} alt={'logo'} />
                         </Link>
 
                     </div>

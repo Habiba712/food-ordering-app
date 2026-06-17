@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import Header from "./component/layout/Header";
 import Hero from "./component/layout/Hero";
