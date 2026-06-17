@@ -53,7 +53,7 @@ export default function Header() {
  <header className="hero-section-desktop w-full px-2 py-2  
         ">
             <div className=' w-full'>
-                <div className="flex justify-between
+                <div className="flex justify-between items-center
                
                 ">
                     <div className='flex justify-start'>
@@ -96,7 +96,7 @@ export default function Header() {
                          ref={menuRef}
                         className={`
                             mx-6
-                            fixed top-16 left-1/2 -translate-x-1/2 z-100 border border-gray-200 bg-white rounded-lg w-80 shadow-sm md:hidden
+                            fixed top-16 left-1/2 -translate-x-1/2 z-120 border border-gray-200 bg-white rounded-lg w-80 shadow-sm md:hidden
                             flex flex-col  gap-4 rounded-lg p-2
                    
   }`
