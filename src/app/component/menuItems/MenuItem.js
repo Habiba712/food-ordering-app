@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 export default function MenuItem({item}) {
     console.log('item', item)
     const pathname = usePathname();
+    const isMenuPage = pathname && pathname.startsWith('/menu');
     return (
         <>
             <div className="z-1 flex flex-col 
@@ -30,7 +31,11 @@ export default function MenuItem({item}) {
                 </div>
                 <h4 className="text-xl font-semibold text-center mb-2">{item.itemName}</h4>
                 <p className="text-gray-700 text-sm mb-3 text-center mx-14 line-clamp-3 ">{item.itemProperties}</p>
-                <button className={`${pathname.includes('/menu') ? "text-white font-semibold bg-red-600 rounded-full px-6 py-3 mb-3 w-fit block mx-auto text-center flex justify-around cursor-pointer" : "hidden"}`}> Add to cart {item.itemBasePrice} £</button>
+                {isMenuPage && (
+                    <button className="text-white font-semibold bg-red-600 rounded-full px-6 py-3 mb-3 w-fit block mx-auto text-center flex justify-around cursor-pointer">
+                        Add to cart {item?.itemBasePrice} £
+                    </button>
+                )}
             </div>
             
         </>
