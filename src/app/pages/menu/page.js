@@ -123,7 +123,7 @@ const user = Session?.data?.user;
                                                                    />
                                                                     </div> 
                                                                 
-                                                    <h4 className=" font-semibold text-center py-2 text-xl">{item.itemName}</h4>
+                                                    <h4 className=" font-semibold  flex items-center justify-center py-2 text-xl min-h-[80px]">{item.itemName}</h4>
                                                     <p className="text-gray-700 text-sm px-5 text-center line-clamp-3 ">{item.itemProperties}</p>
                                                     <div className="px-4 flex justify-center items-center py-4 w-full"
                                                     ><button className="w-full text-white font-semibold bg-red-600 rounded-full py-4 px-3 mx-auto text-center text-md"

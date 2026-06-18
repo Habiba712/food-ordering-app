@@ -202,7 +202,7 @@ console.log('test cartItems', cartItems?.filter((item)=> item?.userEmail === use
     return (
 
 
-        <section className="md:mt-10 max-w-4xl mx-auto">
+        <section className="max-w-auto mx-auto md:mt-10 max-w-4xl mx-auto">
             <div className="text-center">
                 <SectionHeaders mainHeader={'My Cart'} />
 
@@ -214,59 +214,63 @@ console.log('test cartItems', cartItems?.filter((item)=> item?.userEmail === use
                             Your cart is empty 😢</h4>
                     </div>
                     :
-                    <div className=" flex flex-col items-center  w-100 md:grid grid-cols-2 gap-4 mt-8 md:flex md:items-start" style={{ width: '100%' }}>
-                        <div className="flex-col md:w-100 ">
+                    <div className="md:flex " >
+                        <div className="p-3 flex flex-col gap-4 md:w-[60%]" >
                             {(cartItems && cartItems?.filter((item)=> item?.userEmail === userEmail)?.length > 0) &&
 
                                 cartItems.map((item, index) => (
 
                                     <div key={index || item.id}
-                                        className="flex grid grid-2  p-4  w-100 
-                                border-b border-gray-300 
-                                relative min-h-[160px] ">
+                                        className="flex flex-col justify-center border border-gray-200 rounded-lg py-3 md:p-3 md:items-start  ">
 
-                                        <div className="mt-4 h-[100px] w-[100px] rounded-lg  absolute ">
+                                        <div className="w-full flex justify-center md:justify-start">
                                             <Image
                                                 src={item.itemImage}
                                                 alt="userImage"
-                                                fill
-                                                className="object-cover rounded-lg"
+                                                width={200}
+                                                height={200}
+                                                className="object-cover aspect-square rounded-lg"
                                             />
 
                                         </div>
                                         {/* mobile version */}
-                                        <div className="
-                                        grid grid-cols-2 ml-30 gap-25 md:hidden">
+                                        <div className="flex flex-col justify-center items-center   md:flex md:flex-col md:w-[100%]">
 
-                                            <div className="flex flex-col  grow-1 w-50">
-                                                <h3 className="font-semibold mb-2">{item.itemName}</h3>
-                                                <div className="grid grid-cols-1 gap-2 text-sm text-gray-500 ">
-                                                    <div className="grid grid-cols-2">
+                                            <div className="md:w-full">
+                                                <h3 className="font-semibold mb-2 py-1 text-lg">{item.itemName}</h3>
+                                                <div className="flex flex-col gap-2">
+
+                                                    <div className="flex justify-between">
 
                                                         <p>Price: </p>
-                                                        <p> $ {item.itemBasePrice}</p>
+                                                        <p className="text-md font-semibold text-green-500"> $ {item.itemBasePrice}</p>
 
                                                     </div>
-                                                    <div className="grid grid-cols-2">
+
+
+                                                    <div className="flex justify-between">
                                                         <p>Size: </p>
-                                                        <p className="whitespace-normal break-words"> {
+                                                        <p className="whitespace-normal break-words text-sm font-semibold text-gray-500"> {
                                                             item?.size?.name ? `${item?.size?.name} $ ${item?.size?.price}` : 'Regular'
                                                         }</p>
 
                                                     </div>
-                                                    <div className="grid grid-cols-2 ">
-                                                        <p className="whitespace-normal break-words">Extras: </p>
-                                                        <div>
+
+                                                    <div className="flex justify-between gap-1">
+                                                        <div ><p >Extras: </p></div>
+                                                        
+                                                        <div >
                                                             {item?.extras?.length > 0 ? item.extras.map((extra, index) => (
                                                                 <p 
                                                                 key={index || extra.name}
-                                                                className="whitespace-normal break-words  ">
-                                                                    <span className="text-gray-500 font-semibold">{extra.name}</span> +${extra.price}
+                                                                className="whitespace-normal break-words  flex justify-end items-center">
+                                                                    <span className="text-gray-500 text-sm font-semibold">{extra.name} </span> <span className="text-sm font-semibold text-gray-500"> +${extra.price}
+                                                                        </span>
 
                                                                 </p>
                                                             )
                                                             ) :
-                                                                'No Extras'}
+                                                              <p className="whitespace-normal break-words "><span className="text-gray-500 text-sm font-semibold">No Extras</span></p>}
                                                         </div>
 
                                                     </div>
@@ -276,10 +280,10 @@ console.log('test cartItems', cartItems?.filter((item)=> item?.userEmail === use
                                                 </div>
                                             </div>
 
-                                            <div className="flex flex-col items-center justify-between font-semibold md:hidden">
+                                            <div className="w-full flex justify-center ">
 
                                                 {/* quantity and trash icon */}
-                                                <div className="flex gap-2">
+                                                <div className="w-[50%]  flex justify-between md:w-full">
 
                                                     <div className="border border-gray-400 rounded-lg  flex justify-around items-center px-3 ">
                                                         <button
@@ -312,16 +316,7 @@ console.log('test cartItems', cartItems?.filter((item)=> item?.userEmail === use
 
                                                 </div>
 
-                                                <div className="text-green-700 flex justify-center  w-fit text-2xl">
-
-                                                    <p>
-                                                        ${totalPricePerItem(item)}
-
-                                                    </p>
-
-                                                </div>
-
-
+                                                
 
 
 
@@ -332,7 +327,7 @@ console.log('test cartItems', cartItems?.filter((item)=> item?.userEmail === use
 
 
                                         {/* Desktop version */}
-                                        <div className="
+                                        {/* <div className="
                                         hidden
                                         md:grid grid-cols-3 ml-30 w-100 ">
 
@@ -374,15 +369,7 @@ console.log('test cartItems', cartItems?.filter((item)=> item?.userEmail === use
                                                 </div>
                                             </div>
 
-                                            <div className="w-25 flex  items-center font-semibold text-green-700 justify-end">
-                                                <p>
-                                                    ${totalPricePerItem(item)}
-                                                </p>
-
-
-
-
-                                            </div>
+                                            
                                             <div className="w-fit flex items-center justify-end">
                                                 <button
                                                     type="button"
@@ -397,22 +384,8 @@ console.log('test cartItems', cartItems?.filter((item)=> item?.userEmail === use
                                             </div>
 
 
-                                        </div>
-                                        <div className="hidden md:flex justify-around mt-4 w-100 ">
-                                            <div className="border border-gray-400 rounded-lg w-50 flex justify-around">
-                                                <button
-                                                    className="cursor-pointer"
-                                                    onClick={(e) => handleQuantity(e, -1, item)}>
-                                                    -</button>
-
-                                                <label className="text-sm font-semibold">
-                                                    {item.quantity}
-                                                </label>
-                                                <button className="cursor-pointer"
-                                                    onClick={(e) => handleQuantity(e, 1, item)}
-                                                >+</button>
-                                            </div>
-                                        </div>
+                                        </div> */}
+                                       
 
                                     </div>
                                 ))
