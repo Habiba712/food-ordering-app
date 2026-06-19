@@ -42,8 +42,8 @@ export default function AdressBox({data, functions, currentOrder, amountToPay}) 
         };
 
     return( 
-        <div className="w-[70%]  flex flex-col items-center md:w-full">
-           <div className="w-[70%] md:w-full">
+        <div className="w-[90%]  flex flex-col items-center md:w-full">
+           <div className="w-full md:w-full">
                     <div className="bg-gray-100 mt-4 p-4 text-gray-500 flex w-100 justify-between font-semibold text-sm"> Subtotal:
                     <p className="font-semibold mr-3 justify-end">
                         $ {amountToPayPerItem(currentOrder)}
@@ -61,7 +61,7 @@ export default function AdressBox({data, functions, currentOrder, amountToPay}) 
                 </div>
                 </div>
 
-          <div className="w-[70%] flex justify-center items-center md:w-full">
+          <div className=" flex justify-center items-center md:w-full">
                         <div >
                             <form className="flex gap-2 max-w-2xl mx-auto mt-4 w-100 flex flex-col bg-gray-100 p-3 h-fit "
                                 

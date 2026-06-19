@@ -43,14 +43,14 @@ export default function OrderItemBox({ currentOrder, amountToPay }) {
 
     return (
 
-        <div className="w-[70%]  flex justify-center md:w-full " >
-            <div className="w-full flex flex-col items-center md:flex-col w-50">
+        <div className="w-[90%] flex justify-center md:w-full " >
+            <div className="w-full flex flex-col items-centerpy-3 md:flex-col w-50">
                 {(currentOrder && currentOrder.length > 0) &&
 
                     currentOrder.map((item, index) => (
 
                         <div key={index || item.id}
-                            className="w-[70%] flex flex-col justify-center items-center md:items-start border border-gray-100 rounded-lg p-3">
+                            className="w-full flex flex-col justify-center items-center md:items-start border border-gray-100 rounded-lg p-3">
 
                             <div className="w-full flex justify-center md:justify-start">
                                 <Image
@@ -65,10 +65,10 @@ export default function OrderItemBox({ currentOrder, amountToPay }) {
 
 
 
-                            <div className="md:w-full">
+                            <div className="w-full md:w-full">
 
                                   <div className="w-full ">
-                                                <h3 className="font-semibold mb-2 py-1 text-lg text-start">{item.itemName}</h3>
+                                                <h3 className="font-semibold mb-2 py-1 text-lg text-center md:text-start">{item.itemName}</h3>
                                                 <div className="flex flex-col gap-2">
 
                                                     <div className="flex justify-between">
