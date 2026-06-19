@@ -12,7 +12,7 @@ export async function POST(req) {
   const buf = await req.text();
   const sig = req.headers.get('stripe-signature')
   let event;
-  const endpointSecret = process.env.STRIPE_SIGNITURE_KEY;
+  const endpointSecret = process.env.STRIPE_SIGNATURE_KEY;
     console.log('endpointSecret', endpointSecret);
 
 
@@ -24,7 +24,9 @@ export async function POST(req) {
 
       if (event.type === 'checkout.session.completed') {
         const orderId = event?.data?.object?.metadata?.orderId;
+        console.log('orderId', orderId);
         const isPaird = event?.data?.object?.payment_status === 'paid';
+
         console.log('orderId', orderId);
         const order = await Order.findById(orderId);
         console.log('order', order);
@@ -34,6 +36,7 @@ export async function POST(req) {
           //  await order.save();
           // Update the order status in your database
           const objectId = new mongoose.Types.ObjectId(orderId);
+          console.log('objectId', objectId);
           const updatedOrder = await Order.updateOne({ _id: objectId }, { paid: true });
           console.log('updatedOrder', updatedOrder);
 

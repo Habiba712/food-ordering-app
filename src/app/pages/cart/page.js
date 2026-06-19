@@ -221,22 +221,23 @@ console.log('test cartItems', cartItems?.filter((item)=> item?.userEmail === use
                                 cartItems.map((item, index) => (
 
                                     <div key={index || item.id}
-                                        className="flex flex-col justify-center border border-gray-200 rounded-lg py-3 md:p-3 md:items-start  ">
+                                        className="flex flex-col justify-center items-center border border-gray-200 rounded-lg py-3 md:p-3 md:items-start  ">
 
-                                        <div className="w-full flex justify-center md:justify-start">
+                                        <div className="w-[50%]  flex justify-center md:justify-start">
                                             <Image
                                                 src={item.itemImage}
                                                 alt="userImage"
-                                                width={200}
-                                                height={200}
+                                                width={300}
+                                                height={300}
+                                                
                                                 className="object-cover aspect-square rounded-lg"
                                             />
 
                                         </div>
                                         {/* mobile version */}
-                                        <div className="flex flex-col justify-center items-center   md:flex md:flex-col md:w-[100%]">
+                                        <div className="w-[50%]  flex flex-col justify-center items-center   md:flex md:flex-col md:w-[100%]">
 
-                                            <div className="md:w-full">
+                                            <div className="w-full md:w-full">
                                                 <h3 className="font-semibold mb-2 py-1 text-lg">{item.itemName}</h3>
                                                 <div className="flex flex-col gap-2">
 
@@ -279,11 +280,11 @@ console.log('test cartItems', cartItems?.filter((item)=> item?.userEmail === use
 
                                                 </div>
                                             </div>
-
+                                                            {/* add quantity */}
                                             <div className="w-full flex justify-center ">
 
                                                 {/* quantity and trash icon */}
-                                                <div className="w-[50%]  flex justify-between md:w-full">
+                                                <div className="w-full  flex justify-between md:w-full ">
 
                                                     <div className="border border-gray-400 rounded-lg  flex justify-around items-center px-3 ">
                                                         <button

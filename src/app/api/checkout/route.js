@@ -13,7 +13,7 @@ const connectToDatabase = async () => {
 export async function POST(req) {
     const session = await connectToDatabase();
     const { data, adress, amountToPay } = await req.json()
-    console.log('data', data);
+    console.log('data checkout', data);
     
    
 // console.log('data', data)
@@ -28,7 +28,7 @@ export async function POST(req) {
          if(item.size){
             const getSizeFromAllSizes = productInfo.additionalProps.sizes.
             find(s => s.name === item.size.name)
-                            console.log('getSizeFromAllSizes', getSizeFromAllSizes) 
+                            // console.log('getSizeFromAllSizes', getSizeFromAllSizes) 
          
             productPrice += getSizeFromAllSizes.price
         }
@@ -72,7 +72,7 @@ export async function POST(req) {
     // console.log('order', order)
     await order.save();
     // console.log('strip_line_items', strip_line_items)
-    console.log('order.id', order.id.toString());
+    // console.log('order.id', order.id.toString());
     const stripe_checkout_session = await stripe.checkout.sessions.create({
 
         line_items: strip_line_items,

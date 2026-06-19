@@ -126,14 +126,16 @@ export default function OrdersPage() {
             <div className="text-center max-w-3xl mx-auto ">
                 <SectionHeaders  mainHeader={'Your Order'} />
 
-                <div className="flex flex-col items-center gap-4 sm:w-full 
-                md:grid md:grid-cols-2 md:items-start md:w-auto mt-8 md:gap-25">
+                <div className="flex flex-col items-center justify-center  gap-4 
+                md:flex md:flex-row md:w-full md:gap-2 md:items-start md:justify-between
+                ">
  
                     <OrderItemBox
                         currentOrder={currentOrder?.[0]?.cartItems || []}
                     />
                     <AdressBox
                         data={addressBoxData}
+                        currentOrder={currentOrder?.[0]?.cartItems || []}
                         functions={adressBoxFunctions}
                     />
                 </div>

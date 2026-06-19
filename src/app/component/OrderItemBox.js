@@ -43,82 +43,74 @@ export default function OrderItemBox({ currentOrder, amountToPay }) {
 
     return (
 
-        <div className="flex flex-col items-center md:grid grid-cols-2 gap-4" style={{ width: '100%' }}>
-            <div className="w-100  md:flex-col w-50">
+        <div className="w-[70%]  flex justify-center md:w-full " >
+            <div className="w-full flex flex-col items-center md:flex-col w-50">
                 {(currentOrder && currentOrder.length > 0) &&
 
                     currentOrder.map((item, index) => (
 
                         <div key={index || item.id}
-                            className="flex grid grid-2  p-4  w-100
-                                        border-b border-gray-300 
-                                        relative min-h-[160px] ">
+                            className="w-[70%] flex flex-col justify-center items-center md:items-start border border-gray-100 rounded-lg p-3">
 
-                            <div className="mt-4 h-[100px] w-[100px] rounded-lg  absolute ">
+                            <div className="w-full flex justify-center md:justify-start">
                                 <Image
                                     src={item.itemImage}
                                     alt="userImage"
-                                    fill
-                                    className="object-cover rounded-lg"
+                                    width={200}
+                                    height={200}
+                                    className="object-cover aspect-square rounded-lg"
                                 />
 
                             </div>
 
 
 
-                            <div className="w-100 grid grid-cols-3 ml-30 ">
+                            <div className="md:w-full">
 
-                                <div className=" flex flex-col text-start grow-1 w-50 gap-2">
-                                    <h3 className="font-semibold mb-2">{item.itemName}</h3>
-                                    <div className="grid grid-cols-1 gap-2 text-sm text-gray-500 ">
-                                        <div className="grid grid-cols-2">
+                                  <div className="w-full ">
+                                                <h3 className="font-semibold mb-2 py-1 text-lg text-start">{item.itemName}</h3>
+                                                <div className="flex flex-col gap-2">
 
-                                            <p>Price: </p>
-                                            <p> $ {item.itemBasePrice}</p>
+                                                    <div className="flex justify-between">
 
-                                        </div>
-                                        <div className="grid grid-cols-2">
-                                            <p>Size: </p>
-                                            <p className="whitespace-normal break-words"> {
-                                                item?.size?.name ? `${item?.size?.name} $ ${item?.size?.price}` : 'Regular'
-                                            }</p>
+                                                        <p className="text-sm font-semibold">Price: </p>
+                                                        <p className="text-md font-semibold text-green-500"> ${item.itemBasePrice}</p>
 
-                                        </div>
-                                        <div className="grid grid-cols-2 ">
-                                            <p className="whitespace-normal break-words">Extras: </p>
-                                            <div>
-                                                {item?.extras?.length > 0 ? item.extras.map((extra, index) => (
-                                                    <p 
-                                                    key={index || extra.name}
-                                                    className="whitespace-normal break-words  ">
-                                                        <span className="text-gray-500 font-semibold">{extra.name}</span> +${extra.price}
+                                                    </div>
 
-                                                    </p>
-                                                )
-                                                ) :
-                                                    'No Extras'}
+
+                                                    <div className="flex justify-between">
+                                                        <p className="text-sm font-semibold">Size: </p>
+                                                        <p className="whitespace-normal break-words text-sm font-semibold text-gray-500"> {
+                                                            item?.size?.name ? `${item?.size?.name} $ ${item?.size?.price}` : 'Regular'
+                                                        }</p>
+
+                                                    </div>
+
+                                                    <div className="flex justify-between gap-1">
+                                                        <div ><p className="text-sm font-semibold" >Extras: </p></div>
+                                                        
+                                                        <div >
+                                                            {item?.extras?.length > 0 ? item.extras.map((extra, index) => (
+                                                                <p 
+                                                                key={index || extra.name}
+                                                                className="whitespace-normal break-words  flex justify-end items-center">
+                                                                    <span className="text-gray-500 text-sm font-semibold">{extra.name} </span> <span className="text-sm font-semibold text-gray-500"> +${extra.price}
+                                                                        </span>
+
+                                                                </p>
+                                                            )
+                                                            ) :
+                                                              <p className="whitespace-normal break-words "><span className="text-gray-500 text-sm font-semibold">No Extras</span></p>}
+                                                        </div>
+
+                                                    </div>
+
+
+
+                                                </div>
                                             </div>
 
-                                        </div>
-
-
-
-
-                                    </div>
-                                </div>
-
-
-
-
-
-
-                            </div>
-
-                            <div className="w-100 flex justify-center md:w-100 flex justify-center items-center font-semibold  ">
-                                <p>
-                                   <span className="text-gray-500">$</span> <span className="text-2xl text-green-700">  {totalPricePerItem(item)}
-                                        </span>
-                                </p>
 
 
 
@@ -129,37 +121,7 @@ export default function OrderItemBox({ currentOrder, amountToPay }) {
                     ))
                 }
 
-                <div className="bg-gray-100 mt-4 p-4 text-gray-500 flex w-100 justify-between"> Subtotal:
-                    <p className="font-semibold mr-3 justify-end">
-                        $ {amountToPayPerItem(currentOrder)}
-                    </p>
-                </div>
-                <div className="bg-gray-100 mt-4 p-4 text-gray-500 flex w-100 justify-between"> Delivery Fee:
-                    <p className="font-semibold mr-3 justify-end">
-                        $ 5
-                    </p>
-                </div>
-                <div className="bg-gray-100 mt-4 p-4 text-gray-500 flex w-100 justify-between"> Total:
-                    <p className="font-semibold mr-3 justify-end">
-                        $ {amountToPayPerItem(currentOrder) + 5}
-                    </p>
-                </div>
-
-                {/* <div className="bg-gray-100 mt-4 p-4 text-gray-500 flex w-100 justify-between"> Subtotal:
-                                        <p className="font-semibold mr-3 justify-end">
-                                            $ {amountToPayPerItem(cartItemsBox)}
-                                        </p>
-                                    </div>
-                                    <div className="bg-gray-100 mt-4 p-4 text-gray-500 flex w-100 justify-between"> Delivery Fee:
-                                        <p className="font-semibold mr-3 justify-end">
-                                            $ 5
-                                        </p>
-                                    </div>
-                                    <div className="bg-gray-100 mt-4 p-4 text-gray-500 flex w-100 justify-between"> Total:
-                                        <p className="font-semibold mr-3 justify-end">
-                                            $ {amountToPayPerItem(cartItems) + deliveryFee}
-                                        </p>
-                                    </div> */}
+             
 
             </div>
 
