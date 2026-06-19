@@ -44,7 +44,7 @@ export default function OrderItemBox({ currentOrder, amountToPay }) {
     return (
 
         <div className="w-[90%] flex justify-center md:w-full " >
-            <div className="w-full flex flex-col items-centerpy-3 md:flex-col w-50">
+            <div className="w-full flex flex-col items-center py-3 md:flex-col w-50">
                 {(currentOrder && currentOrder.length > 0) &&
 
                     currentOrder.map((item, index) => (
