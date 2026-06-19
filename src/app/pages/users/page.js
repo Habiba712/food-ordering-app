@@ -33,25 +33,19 @@ export default function UsersPage() {
     }
 
      const getUserData = async () =>{
-        const userData = await fetch('http://localhost:3000/api/profile',{
+        const userData = await fetch('/api/profile',{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             }
         }).then((res) => {  
-            return res.json().then((data)=>{
-                console.log('data', data);
-                // setUserName(data.name)
-                // setUserEmail(data.email)
-                // setSavedImage(data.image)
-                // setPhone(data.phone)
-                // setStreet(data.street)
-                // setCountry(data.country)
-                // setCity(data.city)
-                // setPostCode(data.postCode)
-             
+           if(res.ok){
+            return res.json().then((data) => {
+                console.log('data', data)
+                setAdmin(data.admin)
+
             })
-            
+            }
         }).catch((err)=>{
             return new Error(err);
         })
