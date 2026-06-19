@@ -84,7 +84,7 @@ export default function UserPage() {
             }
         }).then((res) => {
             return res.json().then((data) => {
-                console.log('data', data);
+                console.log('data users', data);
                 setUserEmail(data.find(i => i._id === id).email)
                 setUserName(data.find(i => i._id === id).name)
                 setSavedImage(data.find(i => i._id === id).image)
@@ -154,7 +154,8 @@ export default function UserPage() {
         city,
         postCode,
         country,
-        admin, initialAdmin
+        admin,
+        initialAdmin
     }
 
     const userInfoFunctions = {

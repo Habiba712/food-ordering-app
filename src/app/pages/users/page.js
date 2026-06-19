@@ -22,7 +22,7 @@ export default function UsersPage() {
             }
         }).then((res) => {
             return res.json().then((data) => {
-                console.log('data', data);
+                console.log('data users', data);
                 setUsers(data);
             })
 
