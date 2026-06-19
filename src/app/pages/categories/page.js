@@ -43,7 +43,7 @@ export default function CategoriesPage() {
 
         const newCategory = new Promise(async (resolve, reject) => {
 
-            await fetch('http://localhost:3000/api/category', {
+            await fetch('/api/category', {
                 method: editCategory ? 'PUT' : 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -78,7 +78,7 @@ export default function CategoriesPage() {
     }
 
     const fetchCategories = async () => {
-        const categories = await fetch('http://localhost:3000/api/category', {
+        const categories = await fetch('/api/category', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -96,7 +96,7 @@ export default function CategoriesPage() {
 
     const handleDeleteCategory = async (id) => {
         const deteCategory = new Promise(async (resolve, reject) => {
-            const res = await fetch(`http://localhost:3000/api/category/?id=${id}`, {
+            const res = await fetch(`/api/category/?id=${id}`, {
                 method: 'DELETE'
             }).then((res) => {
                 if (res.ok) {
