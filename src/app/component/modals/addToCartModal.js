@@ -45,7 +45,7 @@ export default function AddToCartModal({ item, closeModal, handleAddToCart }) {
             //     closeModal(false)
             // }}
             >
-                <div className="w-90 md:w-100 flex flex-col overflow-y-scroll max-h-[80vh] p-4 
+                <div className="w-[70%] md:w-[30%] flex flex-col overflow-y-scroll max-h-[80vh] p-4 
              scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100"
                     style={{
                         "background": "white",
@@ -63,11 +63,14 @@ export default function AddToCartModal({ item, closeModal, handleAddToCart }) {
                             className="object-cover rounded-lg"
                         />
                     </div>
-                    <h4 className="text-xl font-semibold text-center mb-2">{item.itemName}</h4>
-                    <p className="text-gray-700 text-sm mb-3 text-center mx-auto px-4">{item.itemProperties}</p>
+                    <div className="w-full flex flex-col justify-center items-center md:w-full ">
+                         <h4 className="text-xl font-semibold text-center mb-2">{item.itemName}</h4>
+                    <p className="w-[70%] text-gray-700 text-center text-sm mb-3 text-center mx-auto px-4" >{item.itemProperties}</p>
 
-                    <div className="flex flex-col gap-3 mb-3 mx-auto">
-                        <h3>Pick Your Size</h3>
+                    </div>
+                   
+                    <div className="flex flex-col justify-center items-center  md:w-full mb-3 mx-auto">
+                        <h3 className="text-sm font-semibold">Pick Your Size</h3>
                         {
                             item.additionalProps.sizes.length > 0 && (
                                 <div>
@@ -99,7 +102,7 @@ export default function AddToCartModal({ item, closeModal, handleAddToCart }) {
                             )
                         }
 
-                        <h3>Want any extras ? </h3>
+                        <h3 className="text-sm font-semibold">Want any extras ? </h3>
                         {
                             item.additionalProps.ingredients.length > 0 && (
                                 <div>
@@ -147,7 +150,7 @@ export default function AddToCartModal({ item, closeModal, handleAddToCart }) {
 
 
                     <button className="text-white 
-                                        min-w-[200px] font-semibold bg-red-600 rounded-full px-6 py-3 mb-3 block mx-auto text-center flex justify-around"
+                                        min-w-[200px] font-semibold bg-red-600 rounded-full px-6 py-3 mb-3 block mx-auto text-center flex justify-center gap-2"
                         type="button"
                         onClick={() => {
                             handleAddToCart(
@@ -161,9 +164,7 @@ export default function AddToCartModal({ item, closeModal, handleAddToCart }) {
 
                         }
 
-                    > Add to cart
-                        {addToCartPrice}
-                        £</button>
+                    > Add to cart <span>${addToCartPrice}</span> </button>
 
                     <button
                         type="button"
